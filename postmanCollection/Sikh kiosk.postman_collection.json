@@ -1,0 +1,3065 @@
+{
+  "info": {
+    "_postman_id": "9bf56f68-3f7f-41d3-bf51-08b56f5f2602",
+    "name": "Sikh kiosk",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26779788"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"name\":\"sikh history\",\r\n    \"password\":\"Admin@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"name\":\"sikh history\",\r\n    \"password\":\"Admin@1234\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "227"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"e3-LHbZCD1xNATo6Sl7zwhvjaVJWC4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 10:48:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 201,\n    \"message\": \"The account has been created successfully.\",\n    \"data\": {\n        \"_id\": \"69a024ef1f5b3628e7607369\",\n        \"name\": \"sikh history\",\n        \"email\": \"admin@gmail.com\",\n        \"createdAt\": \"2026-02-26T10:48:15.257Z\"\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"email\": \"admin@gmail.com\",\r\n\t\"password\": \"Admin@1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\":\"Admin@1234\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "413"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19d-YORF3Cmq4FmtsRj2QF1cIGFtQFU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 10:51:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"You have been signed in successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU\",\n        \"user\": {\n            \"_id\": \"69a024ef1f5b3628e7607369\",\n            \"name\": \"sikh history\",\n            \"email\": \"admin@gmail.com\"\n        }\n    },\n    \"error\": []\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sikh-app",
+      "item": [
+        {
+          "name": "Add the apps",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Golden Temple\",\r\n    \"description\":\"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sikh-apps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sikh-apps"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get the apps",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/sikh-apps",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sikh-apps"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the apps",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/sikh-apps",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "sikh-apps"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1132"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"46c-o5JpZpCkQXPyZah3T0yXMTz+AK8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Feb 2026 13:03:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Sikh Apps details fetched successfully\",\n    \"data\": {\n        \"total\": 3,\n        \"list\": [\n            {\n                \"_id\": \"69a0448ac2f6d3e098135b3b\",\n                \"name\": \"Golden Temple\",\n                \"description\": \"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\",\n                \"icon\": null,\n                \"url\": null,\n                \"version\": \"v1.0.0\",\n                \"isActive\": true,\n                \"isDeleted\": false,\n                \"createdAt\": \"2026-02-26T13:03:06.642Z\",\n                \"updatedAt\": \"2026-02-26T13:03:06.642Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69a04458c2f6d3e098135b38\",\n                \"name\": \"timeline\",\n                \"description\": \"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\",\n                \"icon\": null,\n                \"url\": null,\n                \"version\": \"v1.0.0\",\n                \"isActive\": true,\n                \"isDeleted\": false,\n                \"createdAt\": \"2026-02-26T13:02:16.217Z\",\n                \"updatedAt\": \"2026-02-26T13:02:16.217Z\",\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69a04447c2f6d3e098135b35\",\n                \"name\": \"tenGurus\",\n                \"description\": \"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\",\n                \"icon\": null,\n                \"url\": null,\n                \"version\": \"v1.0.0\",\n                \"isActive\": true,\n                \"isDeleted\": false,\n                \"createdAt\": \"2026-02-26T13:01:59.592Z\",\n                \"updatedAt\": \"2026-02-26T13:01:59.592Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Description",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\":\"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/sikh-apps/69a04447c2f6d3e098135b35",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "sikh-apps",
+                "69a04447c2f6d3e098135b35"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Description",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"description\":\"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/sikh-apps/69a04447c2f6d3e098135b35",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "sikh-apps",
+                    "69a04447c2f6d3e098135b35"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "441"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b9-EV2F0YKNuV8Rne+4a73+2NZ7oak\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 06:21:36 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Sikh App details updated successfully\",\n    \"data\": {\n        \"_id\": \"69a04447c2f6d3e098135b35\",\n        \"name\": \"tenGurus\",\n        \"description\": \"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\",\n        \"icon\": null,\n        \"url\": null,\n        \"version\": \"v1.0.1\",\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-02-26T13:01:59.592Z\",\n        \"updatedAt\": \"2026-02-27T06:21:36.713Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get all the data of the Apps",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzczMTE5NTI1LCJleHAiOjE3NzM3MjQzMjV9.-AZt2vs5iDSbtO30A4910tM_20Xuc0TQ1_UN1-9wWGw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}/api/sikh-apps/data",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "sikh-apps",
+                "data"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get all the data of the Apps",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/sikh-apps/data",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "sikh-apps",
+                    "data"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3895"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f37-YIq8Rg3hCpIOWJy95uxnT+eu5cM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 10:12:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"App data details fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"69a0448ac2f6d3e098135b3b\",\n            \"name\": \"Golden Temple\",\n            \"description\": \"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\",\n            \"icon\": null,\n            \"url\": null,\n            \"version\": \"v1.0.1\",\n            \"isActive\": true,\n            \"createdAt\": \"2026-02-26T13:03:06.642Z\",\n            \"updatedAt\": \"2026-03-05T09:24:46.938Z\",\n            \"goldenTemples\": [\n                {\n                    \"_id\": \"69a94bdef7b0497a00e228c2\",\n                    \"title\": \"Golden Temple Tour\",\n                    \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\n                    \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\n                    \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\",\n                    \"createdAt\": \"2026-03-05T09:24:46.933Z\",\n                    \"updatedAt\": \"2026-03-05T09:24:46.933Z\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"69a04458c2f6d3e098135b38\",\n            \"name\": \"timeline\",\n            \"description\": \"An educational and inspirational walkthrough that allows you to learn while you explore the collection.\",\n            \"icon\": null,\n            \"url\": null,\n            \"version\": \"v1.0.2\",\n            \"isActive\": true,\n            \"createdAt\": \"2026-02-26T13:02:16.217Z\",\n            \"updatedAt\": \"2026-03-05T07:26:35.342Z\",\n            \"timelineGalleries\": [\n                {\n                    \"_id\": \"69a6d81049e54f45b9b56129\",\n                    \"shortDescription\": \"Updated description\",\n                    \"longDescription\": \"...\",\n                    \"year\": \"1539\",\n                    \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n                    \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n                    \"createdAt\": \"2026-03-03T12:46:08.002Z\",\n                    \"updatedAt\": \"2026-03-05T07:26:35.335Z\"\n                }\n            ]\n        },\n        {\n            \"_id\": \"69a04447c2f6d3e098135b35\",\n            \"name\": \"tenGurus\",\n            \"description\": \"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\",\n            \"icon\": null,\n            \"url\": null,\n            \"version\": \"v1.0.27\",\n            \"isActive\": true,\n            \"createdAt\": \"2026-02-26T13:01:59.592Z\",\n            \"updatedAt\": \"2026-03-03T12:46:08.004Z\",\n            \"buttons\": [\n                {\n                    \"_id\": \"69a16102cef5996af9807c67\",\n                    \"buttonName\": \"GURU NANAK\",\n                    \"createdAt\": \"2026-02-27T09:16:50.073Z\",\n                    \"updatedAt\": \"2026-02-27T09:16:50.073Z\",\n                    \"galleries\": [],\n                    \"trailers\": []\n                },\n                {\n                    \"_id\": \"69a16102cef5996af9807c64\",\n                    \"buttonName\": \"DUS GURU\",\n                    \"createdAt\": \"2026-02-27T09:16:50.064Z\",\n                    \"updatedAt\": \"2026-02-27T09:16:50.064Z\",\n                    \"galleries\": [\n                        {\n                            \"_id\": \"69a6d50c49e54f45b9b560c2\",\n                            \"title\": \"Laudantium sit proi\",\n                            \"shortDescription\": \"Aliquid ullam exercitationem consequuntur tempora quisquam molestiae praesentium\",\n                            \"longDescription\": \"Cumque amet dolor voluptatum in pariatur Qui modi assumenda quis tempore placeat commodo in deserunt enim aspernatur fugiat ipsum commodo\",\n                            \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/0d6b65cc-45d6-4b1f-93a3-5b2f9ceebc81.png\",\n                            \"thumbnail\": null,\n                            \"accession\": \"Incidunt consequatu\",\n                            \"period\": \"Omnis id saepe minus\",\n                            \"credit\": \"Reprehenderit culpa\",\n                            \"moreDetail\": \"\",\n                            \"createdAt\": \"2026-03-03T12:33:16.548Z\",\n                            \"updatedAt\": \"2026-03-03T12:33:16.548Z\"\n                        },\n                        {\n                            \"_id\": \"69a6d45449e54f45b9b56084\",\n                            \"title\": \"Sint molestias moles\",\n                            \"shortDescription\": \"Commodo tempora omnis illo molestiae quisquam dolores laborum Consequat\",\n                            \"longDescription\": \"Pariatur Facilis minim nulla temporibus quibusdam ut ut earum\",\n                            \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/27958c17-c149-4adb-8150-d2b56051126d.png\",\n                            \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/5400bf03-05f3-40fb-9c50-ea1fa757b015.png\",\n                            \"accession\": \"Sint est asperiores\",\n                            \"period\": \"Fugiat molestias qui\",\n                            \"credit\": \"Fugiat ea ad culpa\",\n                            \"moreDetail\": \"\",\n                            \"createdAt\": \"2026-03-03T12:30:12.759Z\",\n                            \"updatedAt\": \"2026-03-03T12:30:12.759Z\"\n                        }\n                    ],\n                    \"trailers\": [\n                        {\n                            \"_id\": \"69a19c594ff71763133e41fd\",\n                            \"description\": \"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\",\n                            \"videoUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg\",\n                            \"thumbnail\": \"https://www.google.com\",\n                            \"createdAt\": \"2026-02-27T13:30:01.321Z\",\n                            \"updatedAt\": \"2026-03-02T10:01:40.719Z\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"error\": []\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10gurus",
+      "item": [
+        {
+          "name": "Get all the buttons",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzE1NDE2LCJleHAiOjE3NzMzMjAyMTZ9.xN6Oqtn9aHoa3DaeH4nJwn3CxX1a6RlxOoRUEdXFlYI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/buttons",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "buttons"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get all the buttons",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/buttons",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "buttons"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "509"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1fd-cZo+/4vP1zRUlRwyQTdKO30w+3o\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 11:43:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Ten Gurus Buttons details fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"69a16102cef5996af9807c67\",\n            \"appId\": \"69a04447c2f6d3e098135b35\",\n            \"buttonName\": \"GURU NANAK\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-02-27T09:16:50.073Z\",\n            \"updatedAt\": \"2026-02-27T09:16:50.073Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69a16102cef5996af9807c64\",\n            \"appId\": \"69a04447c2f6d3e098135b35\",\n            \"buttonName\": \"DUS GURU\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-02-27T09:16:50.064Z\",\n            \"updatedAt\": \"2026-02-27T09:16:50.064Z\",\n            \"__v\": 0\n        }\n    ],\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create the trailer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzc3MzQ4LCJleHAiOjE3NzMzODIxNDh9.D1bl6Qe2unYAJMSOcq3LdASWIwvVbnwwtMorlXBIY7I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"appId\":\"69a04447c2f6d3e098135b35\",\r\n    \"buttonId\":\"69a16102cef5996af9807c67\",\r\n    \"description\":\"The first Blender Open Movie from 2006\",\r\n    \"videoUrl\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\",\r\n    \"thumbnail\":\"https://rosetta-stone-experience.s3.ap-southeast-2.amazonaws.com/materials/images/thumbnail_image/2fce90d7-a28a-4b10-956e-94d71a031b52.jpeg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/trailer",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "trailer"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create the trailer",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"appId\":\"69a04447c2f6d3e098135b35\",\r\n    \"buttonId\":\"69a16102cef5996af9807c64\",\r\n    \"description\":\"Thuis is DUs gugur\",\r\n    \"videoUrl\":\"https://www.google.com\",\r\n    \"thumbnail\":\"https://www.google.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/trailer",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "trailer"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "411"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19b-HxS4ruRHWlX4TA4UnggoI1pgeSo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 13:30:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 201,\n    \"message\": \"Trailer created successfully\",\n    \"data\": {\n        \"appId\": \"69a04447c2f6d3e098135b35\",\n        \"buttonId\": \"69a16102cef5996af9807c64\",\n        \"description\": \"Thuis is DUs gugur\",\n        \"videoUrl\": \"https://www.google.com\",\n        \"thumbnail\": \"https://www.google.com\",\n        \"isDeleted\": false,\n        \"_id\": \"69a19c594ff71763133e41fd\",\n        \"createdAt\": \"2026-02-27T13:30:01.321Z\",\n        \"updatedAt\": \"2026-02-27T13:30:01.321Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get all Trailers",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzE1NDE2LCJleHAiOjE3NzMzMjAyMTZ9.xN6Oqtn9aHoa3DaeH4nJwn3CxX1a6RlxOoRUEdXFlYI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/trailers?appId=69a04447c2f6d3e098135b35",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "trailers"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get all Trailers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/trailers?appId=69a04447c2f6d3e098135b35",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "trailers"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "428"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1ac-D7LzLHyHFQ15D0NsQe9tBH77f9E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 06:47:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Trailers details fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"69a19c594ff71763133e41fd\",\n            \"appId\": \"69a04447c2f6d3e098135b35\",\n            \"buttonId\": {\n                \"_id\": \"69a16102cef5996af9807c64\",\n                \"buttonName\": \"DUS GURU\"\n            },\n            \"description\": \"Thuis is DUs gugur\",\n            \"videoUrl\": \"https://www.google.com\",\n            \"thumbnail\": \"https://www.google.com\",\n            \"createdAt\": \"2026-02-27T13:30:01.321Z\",\n            \"updatedAt\": \"2026-02-27T13:30:01.321Z\"\n        }\n    ],\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Upload Image Presigned URL",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzc3MzQ4LCJleHAiOjE3NzMzODIxNDh9.D1bl6Qe2unYAJMSOcq3LdASWIwvVbnwwtMorlXBIY7I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contentType\":\"image/png\",\r\n    \"fileType\" :\"image\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/trailers/presigned-url",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "trailers",
+                "presigned-url"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Upload Image Presigned URL",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "file",
+                  "file": {}
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/trailers/presigned-url",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "trailers",
+                    "presigned-url"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "799"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31f-/Mv2+yRhnkgVFwK4fHwkFqGkGBA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 07:12:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Presigned URL generated successfully\",\n    \"data\": {\n        \"uploadUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT54DL5XTZESL526W%2F20260302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260302T071215Z&X-Amz-Expires=3600&X-Amz-Signature=74ca8dd33609368fd9485933159351c9b0c0f17dd7217300eb1764995bcc9afd&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject\",\n        \"key\": \"trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg\",\n        \"fileUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg\"\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update the trailer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzE1OTY1LCJleHAiOjE3NzMzMjA3NjV9.U61tnWdzqDGvF25kbq6HeKQSrA33-B-dvAXMPvB2NA0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\":\"Big Buck Bunny tells the story of a giant rabbit\",\r\n    \"videoUrl\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/trailers/69a19c594ff71763133e41fd",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "trailers",
+                "69a19c594ff71763133e41fd"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update the trailer",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"description\":\"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\",\r\n    \"videoUrl\":\"https://sikh-kiosk.s3.us-east-1.amazonaws.com/trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/trailers/69a19c594ff71763133e41fd",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "trailers",
+                    "69a19c594ff71763133e41fd"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "594"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"252-WEIRA5/vypXNvfwzuIhJdUv1xvk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 10:01:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Trailer details updated successfully\",\n    \"data\": {\n        \"_id\": \"69a19c594ff71763133e41fd\",\n        \"appId\": \"69a04447c2f6d3e098135b35\",\n        \"buttonId\": \"69a16102cef5996af9807c64\",\n        \"description\": \"Text = An educational and inspirational walkthrough that allows you to learn while you explore the collection\",\n        \"videoUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/trailers/thumbnails/72eda559-e68d-4011-b042-55ff18a1a03e.jpg\",\n        \"thumbnail\": \"https://www.google.com\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-02-27T13:30:01.321Z\",\n        \"updatedAt\": \"2026-03-02T10:01:40.719Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add the Gallery Content",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzczNzczLCJleHAiOjE3NzMzNzg1NzN9.-cmd5f9GHZ-W0pdQT7gu5FlzKW6wxTil8-r4BufYsfA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"appId\": \"69a04447c2f6d3e098135b35\",\r\n  \"buttonId\": \"69a16102cef5996af9807c67\",\r\n  \"title\": \"GURU NANAK DEV JI\",\r\n  \"shortDescription\": \"Guru Nanak sits at the center with a parrot, flanked by Mardana with his sitar and Bala holding a peacock whisk.\",\r\n  \"longDescription\": \"Guru Nanak (first Guru, 1469-1539) is depicted characteristically, seated in the middle with a parrot, attended by his musician Mardana, holding a sitar on the left, and devotee Bala on the right, holding a peacock whisk (chaur). Painted on rice paper and mounted on teak wood, this piece is extensively embellished with gold structures and embedded with semi-precious stones. Made for the Maharaja of Mysore, who had a collection of similar paintings of deities of India, this rare piece is created in the Thanjavur (Tanjore) style. The group is seated on a terrace underneath a gold canopy with winged angels flying above, representing divine authority. Exhibited at the Smithsonian ( National Museum of Natural History) in 'Sikhs : Legacy of the Punjab' July 25, 2004 - September 18,2007.\",\r\n  \"image\": \"https://rosetta-stone-experience.s3.ap-southeast-2.amazonaws.com/materials/images/thumbnail_image/2fce90d7-a28a-4b10-956e-94d71a031b52.jpeg\",\r\n  \"thumbnail\": \"https://rosetta-stone-experience.s3.ap-southeast-2.amazonaws.com/materials/images/thumbnail_image/2fce90d7-a28a-4b10-956e-94d71a031b52.jpeg\",\r\n  \"accession\": \"MFGN-000\",\r\n  \"period\": \"Circa 1800 / Punjab Plains, India\",\r\n  \"credit\": \"Mahal Art Collection\",\r\n  \"moreDetail\": \"www.sikhhistorymuseum.org\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/galleries",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "galleries"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add the Gallery Content",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"appId\": \"69a04447c2f6d3e098135b35\",\r\n  \"buttonId\": \"69a16102cef5996af9807c64\",\r\n  \"title\": \"Gallery Title\",\r\n  \"shortDescription\": \"Guru Angad, born Lehna in Punjab’s Malwa region, became a devoted follower of Guru Nanak after a life-changing meeting in Kartarpur. \",\r\n  \"longDescription\": \"A meditative Guru Nanak (first Guru, 1469-1539), seated on a platform is starring off into the distance with a focused glare, adorned in a white tunic (Jämä) and brown conical cap (seli topi). The Guru is seated on a reddish platform outlined in gold embroidery (zaradär) is resting upon a cushionwith another cushion under his arms for meditative support. A standing devotee on the right (BhaiBala) waves a whisk (chaur) over the Guru's halo, while a musician (Bhai mardana) dressed in green plays a rabäb, a lute. The group is covered by a canopy, symbolic of royalty, on a dark blue terrace,which provides a depth of composition in contrast to the flat reddish-orange background with faint clouds stretching across the sky.\",\r\n  \"image\": \"https://...\",\r\n  \"thumbnail\": \"https://...\",\r\n  \"accession\": \"MFGN-013\",\r\n  \"period\": \"Circa 1830 / Punjab Plains, India\",\r\n  \"credit\": \"Mahal Art Collection\",\r\n  \"moreDetail\": \"www.sikhhistorymuseum.org\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/galleries",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "galleries"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1424"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"590-jXqcVYb/xMxJZv8kaEG/nh2E3hI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 10:54:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 201,\n    \"message\": \"Gallery created successfully\",\n    \"data\": {\n        \"appId\": \"69a04447c2f6d3e098135b35\",\n        \"buttonId\": \"69a16102cef5996af9807c64\",\n        \"title\": \"Gallery Title\",\n        \"shortDescription\": \"Guru Angad, born Lehna in Punjab’s Malwa region, became a devoted follower of Guru Nanak after a life-changing meeting in Kartarpur. \",\n        \"longDescription\": \"A meditative Guru Nanak (first Guru, 1469-1539), seated on a platform is starring off into the distance with a focused glare, adorned in a white tunic (Jämä) and brown conical cap (seli topi). The Guru is seated on a reddish platform outlined in gold embroidery (zaradär) is resting upon a cushionwith another cushion under his arms for meditative support. A standing devotee on the right (BhaiBala) waves a whisk (chaur) over the Guru's halo, while a musician (Bhai mardana) dressed in green plays a rabäb, a lute. The group is covered by a canopy, symbolic of royalty, on a dark blue terrace,which provides a depth of composition in contrast to the flat reddish-orange background with faint clouds stretching across the sky.\",\n        \"image\": \"https://...\",\n        \"thumbnail\": \"https://...\",\n        \"accession\": \"MFGN-013\",\n        \"period\": \"Circa 1830 / Punjab Plains, India\",\n        \"credit\": \"Mahal Art Collection\",\n        \"moreDetail\": \"www.sikhhistorymuseum.org\",\n        \"isDeleted\": false,\n        \"_id\": \"69a56c4c5e3f5a526779f9a3\",\n        \"createdAt\": \"2026-03-02T10:54:04.261Z\",\n        \"updatedAt\": \"2026-03-02T10:54:04.261Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "List of the Gallery",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/ten-gurus/galleries?appId=69a04447c2f6d3e098135b35&buttonId=69a16102cef5996af9807c64",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "galleries"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35",
+                  "type": "text"
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c64",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List of the Gallery",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/galleries?appId=69a04447c2f6d3e098135b35&buttonId=69a16102cef5996af9807c64",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "galleries"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35"
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1440"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5a0-tYQXyVi3DQ/Yn9k89ySBFe3RpWk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 02 Mar 2026 12:13:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Gallery details fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"69a56c4c5e3f5a526779f9a3\",\n            \"appId\": \"69a04447c2f6d3e098135b35\",\n            \"buttonId\": {\n                \"_id\": \"69a16102cef5996af9807c64\",\n                \"buttonName\": \"DUS GURU\"\n            },\n            \"title\": \"Gallery Title\",\n            \"shortDescription\": \"Guru Angad, born Lehna in Punjab’s Malwa region, became a devoted follower of Guru Nanak after a life-changing meeting in Kartarpur. \",\n            \"longDescription\": \"A meditative Guru Nanak (first Guru, 1469-1539), seated on a platform is starring off into the distance with a focused glare, adorned in a white tunic (Jämä) and brown conical cap (seli topi). The Guru is seated on a reddish platform outlined in gold embroidery (zaradär) is resting upon a cushionwith another cushion under his arms for meditative support. A standing devotee on the right (BhaiBala) waves a whisk (chaur) over the Guru's halo, while a musician (Bhai mardana) dressed in green plays a rabäb, a lute. The group is covered by a canopy, symbolic of royalty, on a dark blue terrace,which provides a depth of composition in contrast to the flat reddish-orange background with faint clouds stretching across the sky.\",\n            \"image\": \"https://...\",\n            \"thumbnail\": \"https://...\",\n            \"accession\": \"MFGN-013\",\n            \"period\": \"Circa 1830 / Punjab Plains, India\",\n            \"credit\": \"Mahal Art Collection\",\n            \"moreDetail\": \"www.sikhhistorymuseum.org\",\n            \"createdAt\": \"2026-03-02T10:54:04.261Z\",\n            \"updatedAt\": \"2026-03-02T10:54:04.261Z\"\n        }\n    ],\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the Detail of the Gallery by Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/ten-gurus/galleries/69a56c4c5e3f5a526779f9a3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "galleries",
+                "69a56c4c5e3f5a526779f9a3"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35",
+                  "disabled": true
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c64",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the Detail of the Gallery by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/galleries/69a56c4c5e3f5a526779f9a3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "galleries",
+                    "69a56c4c5e3f5a526779f9a3"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35",
+                      "disabled": true
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1490"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5d2-pgFOzNyGDkfqh4maWK9RxAhYWa8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 05:42:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Gallery details fetched successfully\",\n    \"data\": {\n        \"_id\": \"69a56c4c5e3f5a526779f9a3\",\n        \"appId\": {\n            \"_id\": \"69a04447c2f6d3e098135b35\",\n            \"name\": \"tenGurus\"\n        },\n        \"buttonId\": {\n            \"_id\": \"69a16102cef5996af9807c64\",\n            \"buttonName\": \"DUS GURU\"\n        },\n        \"title\": \"Gallery Title\",\n        \"shortDescription\": \"Guru Angad, born Lehna in Punjab’s Malwa region, became a devoted follower of Guru Nanak after a life-changing meeting in Kartarpur. \",\n        \"longDescription\": \"A meditative Guru Nanak (first Guru, 1469-1539), seated on a platform is starring off into the distance with a focused glare, adorned in a white tunic (Jämä) and brown conical cap (seli topi). The Guru is seated on a reddish platform outlined in gold embroidery (zaradär) is resting upon a cushionwith another cushion under his arms for meditative support. A standing devotee on the right (BhaiBala) waves a whisk (chaur) over the Guru's halo, while a musician (Bhai mardana) dressed in green plays a rabäb, a lute. The group is covered by a canopy, symbolic of royalty, on a dark blue terrace,which provides a depth of composition in contrast to the flat reddish-orange background with faint clouds stretching across the sky.\",\n        \"image\": \"https://...\",\n        \"thumbnail\": \"https://...\",\n        \"accession\": \"MFGN-013\",\n        \"period\": \"Circa 1830 / Punjab Plains, India\",\n        \"credit\": \"Mahal Art Collection\",\n        \"moreDetail\": \"www.sikhhistorymuseum.org\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-02T10:54:04.261Z\",\n        \"updatedAt\": \"2026-03-02T10:54:04.261Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update the Gallery content",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzczNzczLCJleHAiOjE3NzMzNzg1NzN9.-cmd5f9GHZ-W0pdQT7gu5FlzKW6wxTil8-r4BufYsfA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t//Dus Guru Images\r\n\t\"title\": \"Guru Gobind Singh--\"\r\n\t//\"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/ee982d77-c916-4ae1-a6dc-7df021f2c3ef.png\",\r\n\t//\"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/6bcd2ef9-f248-4dcc-b9c1-09ea33ec6ee4.png\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/galleries/69aa6dbbeaab7c78a2610dff?appId=69a04447c2f6d3e098135b35&buttonId=69a16102cef5996af9807c64",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "galleries",
+                "69aa6dbbeaab7c78a2610dff"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35"
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c64"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update the Gallery content",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"title\": \"Updated Title\",\r\n  \"shortDescription\": \"Updated short desc\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/new-image.png\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/galleries/69a56c4c5e3f5a526779f9a3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "galleries",
+                    "69a56c4c5e3f5a526779f9a3"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35",
+                      "disabled": true
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1380"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"564-blqDTuwCsLJFtPLQGzbWldmGWa8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 06:42:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Gallery details updated successfully\",\n    \"data\": {\n        \"_id\": \"69a56c4c5e3f5a526779f9a3\",\n        \"appId\": \"69a04447c2f6d3e098135b35\",\n        \"buttonId\": \"69a16102cef5996af9807c64\",\n        \"title\": \"Updated Title\",\n        \"shortDescription\": \"Updated short desc\",\n        \"longDescription\": \"A meditative Guru Nanak (first Guru, 1469-1539), seated on a platform is starring off into the distance with a focused glare, adorned in a white tunic (Jämä) and brown conical cap (seli topi). The Guru is seated on a reddish platform outlined in gold embroidery (zaradär) is resting upon a cushionwith another cushion under his arms for meditative support. A standing devotee on the right (BhaiBala) waves a whisk (chaur) over the Guru's halo, while a musician (Bhai mardana) dressed in green plays a rabäb, a lute. The group is covered by a canopy, symbolic of royalty, on a dark blue terrace,which provides a depth of composition in contrast to the flat reddish-orange background with faint clouds stretching across the sky.\",\n        \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/galleries/images/new-image.png\",\n        \"thumbnail\": \"https://...\",\n        \"accession\": \"MFGN-013\",\n        \"period\": \"Circa 1830 / Punjab Plains, India\",\n        \"credit\": \"Mahal Art Collection\",\n        \"moreDetail\": \"www.sikhhistorymuseum.org\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-02T10:54:04.261Z\",\n        \"updatedAt\": \"2026-03-03T06:42:00.260Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete the gallery content",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzczNzczLCJleHAiOjE3NzMzNzg1NzN9.-cmd5f9GHZ-W0pdQT7gu5FlzKW6wxTil8-r4BufYsfA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:3000/api/ten-gurus/galleries/69aa7142eaab7c78a2610e3f?appId=69a04447c2f6d3e098135b35&buttonId=69a16102cef5996af9807c67",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "galleries",
+                "69aa7142eaab7c78a2610e3f"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35"
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c67"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete the gallery content",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/galleries/69a56c4c5e3f5a526779f9a3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "galleries",
+                    "69a56c4c5e3f5a526779f9a3"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35",
+                      "disabled": true
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "94"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5e-cSMstSTgWicoS0qTv3Rj2Bs1Dxo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 08:53:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Gallery deleted successfully\",\n    \"data\": [],\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the Detail of the button by Id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/ten-gurus/button/69a16102cef5996af9807c64",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "ten-gurus",
+                "button",
+                "69a16102cef5996af9807c64"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35",
+                  "disabled": true
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c64",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the Detail of the button by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/ten-gurus/button/69a16102cef5996af9807c64",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "ten-gurus",
+                    "button",
+                    "69a16102cef5996af9807c64"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35",
+                      "disabled": true
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "322"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"142-jVy6oJOpcP3J2pPo7j2fNHlEPs8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 11:01:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Button details fetched successfully\",\n    \"data\": {\n        \"_id\": \"69a16102cef5996af9807c64\",\n        \"appId\": {\n            \"_id\": \"69a04447c2f6d3e098135b35\",\n            \"name\": \"tenGurus\"\n        },\n        \"buttonName\": \"DUS GURU\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-02-27T09:16:50.064Z\",\n        \"updatedAt\": \"2026-02-27T09:16:50.064Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Timeline-gallery",
+      "item": [
+        {
+          "name": "Generate the presigned URl",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzczMTE5NTI1LCJleHAiOjE3NzM3MjQzMjV9.-AZt2vs5iDSbtO30A4910tM_20Xuc0TQ1_UN1-9wWGw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contentType\":\"image/png\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/timeline-gallery/presigned-url",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "timeline-gallery",
+                "presigned-url"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04447c2f6d3e098135b35",
+                  "disabled": true
+                },
+                {
+                  "key": "buttonId",
+                  "value": "69a16102cef5996af9807c64",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Generate the presigned URl",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"contentType\":\"image/jpg\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/presigned-url",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    "presigned-url"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04447c2f6d3e098135b35",
+                      "disabled": true
+                    },
+                    {
+                      "key": "buttonId",
+                      "value": "69a16102cef5996af9807c64",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "811"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"32b-yrC1SIGkkhjgnLPw0tWUUCMbmAI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 12:06:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Presigned URL generated successfully\",\n    \"data\": {\n        \"uploadUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/e9ef005a-18f3-4454-b855-470aa554ccd8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT54DL5XTZESL526W%2F20260303%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260303T120622Z&X-Amz-Expires=3600&X-Amz-Signature=1c61e222668129cb91d7a1719da3827505ccf5797f1e68d63e1524fcbd2fe3fd&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject\",\n        \"key\": \"timeline-gallery/images/e9ef005a-18f3-4454-b855-470aa554ccd8.jpg\",\n        \"fileUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/e9ef005a-18f3-4454-b855-470aa554ccd8.jpg\"\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add the Timeline Gallery",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzczMDYxNjAxLCJleHAiOjE3NzM2NjY0MDF9.RBudZD4lRIwbUfdyaqyUlWAalviHtqDvMRV3SssIXVE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"appId\": \"69a04458c2f6d3e098135b38\",\r\n\r\n\r\n\r\n\t\"year\": \"1469\",\t\r\n\r\n\r\n\t\"longDescription\": \"THE BIRTH OF GURU NANAK - Guru Nanak (1469-1539), the first of the ten Gurus of the Sikhs, was born in Nankana Sahib near Lahore to a Hindu merchant (Khatri) family and he amazed those around him with his spiritual insight from childhood. Nanak questioned the status quo, starting with the rituals the family priest wanted him to follow, his teacher's instructions and the injustices he saw in society. He rejected all distinctions of religion, caste, and gender – seeking solitude in devotion and serving the poor. The story of the Sachā Saudā, the True Investment, is emblematic of Nanak’s mindset. When Nanak was 18 years old, his father gave him twenty rupees to go to the city and buy some goods that he could trade to make a profitable investment. But the young Guru used that money to buy food and clothes for the poor. Upon returning home the Guru explained to his father that helping others was the True Investment. He institutionalized this sentiment later as langar, or free communal kitchens, that are present in Gurdwaras (Sikh Temple) worldwide\"\r\n\r\n\t\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/timeline-gallery/",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "timeline-gallery",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add the Timeline Gallery",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"appId\": \"69a04447c2f6d3e098135b35\",\r\n  \"year\": \"1469\",\r\n  \"shortDescription\": \"Birth of Guru Nanak\",\r\n  \"longDescription\": \"...\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\r\n  \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "525"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"20d-uc/psEPOBqJ80r2Ug0B4+wC1QIc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 12:46:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 201,\n    \"message\": \"Timeline Gallery created successfully\",\n    \"data\": {\n        \"appId\": \"69a04447c2f6d3e098135b35\",\n        \"shortDescription\": \"Birth of Guru Nanak\",\n        \"longDescription\": \"...\",\n        \"year\": \"1469\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"isDeleted\": false,\n        \"_id\": \"69a6d81049e54f45b9b56129\",\n        \"createdAt\": \"2026-03-03T12:46:08.002Z\",\n        \"updatedAt\": \"2026-03-03T12:46:08.002Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Listing of the Timeline Gallery with Pagination",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"appId\": \"69a04447c2f6d3e098135b35\",\r\n  \"year\": \"1469\",\r\n  \"shortDescription\": \"Birth of Guru Nanak\",\r\n  \"longDescription\": \"...\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\r\n  \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/timeline-gallery/?appId=69a04458c2f6d3e098135b38",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "timeline-gallery",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a04458c2f6d3e098135b38",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listing of the Timeline Gallery with Pagination",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"appId\": \"69a04447c2f6d3e098135b35\",\r\n  \"year\": \"1469\",\r\n  \"shortDescription\": \"Birth of Guru Nanak\",\r\n  \"longDescription\": \"...\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\r\n  \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/?appId=69a04458c2f6d3e098135b38",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a04458c2f6d3e098135b38"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "638"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27e-AnCCgc6D74au9b22n2TTfHuYwbw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Mar 2026 13:12:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Timeline Gallery details fetched successfully\",\n    \"data\": {\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalItems\": 1,\n        \"totalPages\": 1,\n        \"hasNextPage\": false,\n        \"hasPreviousPage\": false,\n        \"data\": [\n            {\n                \"_id\": \"69a6d81049e54f45b9b56129\",\n                \"appId\": \"69a04458c2f6d3e098135b38\",\n                \"shortDescription\": \"Birth of Guru Nanak\",\n                \"longDescription\": \"...\",\n                \"year\": \"1469\",\n                \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n                \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n                \"isDeleted\": false,\n                \"createdAt\": \"2026-03-03T12:46:08.002Z\",\n                \"updatedAt\": \"2026-03-03T12:46:08.002Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the detail of Timeline Gallery content",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/timeline-gallery/69a6d81049e54f45b9b56129",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "timeline-gallery",
+                "69a6d81049e54f45b9b56129"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the detail of Timeline Gallery content",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/69a6d81049e54f45b9b56129",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    "69a6d81049e54f45b9b56129"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "559"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22f-nzTnD0I+yzGBMPxI4MmOuUzu9/4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 07:02:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Timeline Gallery details fetched successfully\",\n    \"data\": {\n        \"_id\": \"69a6d81049e54f45b9b56129\",\n        \"appId\": {\n            \"_id\": \"69a04458c2f6d3e098135b38\",\n            \"name\": \"timeline\"\n        },\n        \"shortDescription\": \"Birth of Guru Nanak\",\n        \"longDescription\": \"...\",\n        \"year\": \"1469\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-03T12:46:08.002Z\",\n        \"updatedAt\": \"2026-03-03T12:46:08.002Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update the Timeline Gallery Content",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"year\": \"1539\",\r\n  \"shortDescription\": \"Updated description\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/timeline-gallery/69a6d81049e54f45b9b56129",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "timeline-gallery",
+                "69a6d81049e54f45b9b56129"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update the Timeline Gallery Content",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"year\": \"1539\",\r\n  \"shortDescription\": \"Updated description\",\r\n  \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/69a6d81049e54f45b9b56129",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    "69a6d81049e54f45b9b56129"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "533"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"215-h38g2sRY7fb/5La5n25Yisr8GlA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 07:05:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Timeline Gallery details updated successfully\",\n    \"data\": {\n        \"_id\": \"69a6d81049e54f45b9b56129\",\n        \"appId\": \"69a04458c2f6d3e098135b38\",\n        \"shortDescription\": \"Updated description\",\n        \"longDescription\": \"...\",\n        \"year\": \"1539\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"image\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/timeline-gallery/images/...\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-03T12:46:08.002Z\",\n        \"updatedAt\": \"2026-03-05T07:05:41.163Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete the timeline gallery content",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzczMDYxMDA1LCJleHAiOjE3NzM2NjU4MDV9.0M0uidzorSjuCIOf4C4iGTBjIGcNXmhk2mPBKHiLb_E",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/timeline-gallery/69a6d81049e54f45b9b56129",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "timeline-gallery",
+                "69a6d81049e54f45b9b56129"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete the timeline gallery content",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/timeline-gallery/69a6d81049e54f45b9b56129",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "timeline-gallery",
+                    "69a6d81049e54f45b9b56129"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "103"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"67-P4k93Uc3iz4W5BUPVolRbw24qSY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 07:26:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Timeline Gallery deleted successfully\",\n    \"data\": [],\n    \"error\": []\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Golden Temple",
+      "item": [
+        {
+          "name": "Update the Golden temple Data",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyNzExMTA2LCJleHAiOjE3NzMzMTU5MDZ9.TPlOM-T7raUOCwF4LWks39vcSk5knfR3mkljbfU2IqU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/b10bc84f-5458-45c6-a142-3f02e3ff8513.png\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/golden-temple/69a94bdef7b0497a00e228c2",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "golden-temple",
+                "69a94bdef7b0497a00e228c2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update the Golden temple Data",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\":\"Entrance\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/golden-temple/69a94bdef7b0497a00e228c2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "golden-temple",
+                    "69a94bdef7b0497a00e228c2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "556"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22c-iQQiDUcrLhup2j1S5giknaUD2+c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 11:45:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Golden Temple details updated successfully\",\n    \"data\": {\n        \"_id\": \"69a94bdef7b0497a00e228c2\",\n        \"appId\": \"69a0448ac2f6d3e098135b3b\",\n        \"title\": \"Entrance\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\n        \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\n        \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-05T09:24:46.933Z\",\n        \"updatedAt\": \"2026-03-05T11:45:29.666Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Generate the Presign URL",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contentType\":\"image/png\",\r\n    \"fileType\":\"thumbnail\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/golden-temple/presigned-url",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "golden-temple",
+                "presigned-url"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Generate the Presign URL",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"contentType\":\"image/png\",\r\n    \"fileType\":\"thumbnail\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/golden-temple/presigned-url",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "golden-temple",
+                    "presigned-url"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "814"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"32e-rCS7fc5C8pWwFb6b75rOKZUvYpA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 08:50:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Presigned URL generated successfully\",\n    \"data\": {\n        \"uploadUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/0ee6be50-cddf-4678-ac7f-a6eb3514ff7d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT54DL5XTZESL526W%2F20260305%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260305T085027Z&X-Amz-Expires=3600&X-Amz-Signature=6e472deef9c9d41314725ffb99c071f2ee31ffced00859e862dc5a59b0b7f296&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject\",\n        \"key\": \"golden-temple/thumbnails/0ee6be50-cddf-4678-ac7f-a6eb3514ff7d.png\",\n        \"fileUrl\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/0ee6be50-cddf-4678-ac7f-a6eb3514ff7d.png\"\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create the Golden Temple Data",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"appId\": \"69a0448ac2f6d3e098135b3b\",\r\n\t\"title\": {{title}}\r\n\t}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}/api/golden-temple",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "golden-temple"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create the Golden Temple Data",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"appId\": \"69a0448ac2f6d3e098135b3b\",\r\n  \"title\": \"Golden Temple Tour\",\r\n  \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\r\n  \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\r\n  \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/golden-temple",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "golden-temple"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "558"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22e-P3qvu2qsy8Z8TxDbTJ+8SQL8T6k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 09:24:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 201,\n    \"message\": \"Golden Temple created successfully\",\n    \"data\": {\n        \"appId\": \"69a0448ac2f6d3e098135b3b\",\n        \"title\": \"Golden Temple Tour\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\n        \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\n        \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\",\n        \"isDeleted\": false,\n        \"_id\": \"69a94bdef7b0497a00e228c2\",\n        \"createdAt\": \"2026-03-05T09:24:46.933Z\",\n        \"updatedAt\": \"2026-03-05T09:24:46.933Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the list of the Golden Temple Content",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/golden-temple?appId=69a0448ac2f6d3e098135b3b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "golden-temple"
+              ],
+              "query": [
+                {
+                  "key": "appId",
+                  "value": "69a0448ac2f6d3e098135b3b",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the list of the Golden Temple Content",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/golden-temple?appId=69a0448ac2f6d3e098135b3b",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "golden-temple"
+                  ],
+                  "query": [
+                    {
+                      "key": "appId",
+                      "value": "69a0448ac2f6d3e098135b3b"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "671"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"29f-F03XnXqVG6oxyep31gZS5OyDmmY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 09:35:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Golden Temple details fetched successfully\",\n    \"data\": {\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalItems\": 1,\n        \"totalPages\": 1,\n        \"hasNextPage\": false,\n        \"hasPreviousPage\": false,\n        \"data\": [\n            {\n                \"_id\": \"69a94bdef7b0497a00e228c2\",\n                \"appId\": \"69a0448ac2f6d3e098135b3b\",\n                \"title\": \"Golden Temple Tour\",\n                \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\n                \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\n                \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\",\n                \"isDeleted\": false,\n                \"createdAt\": \"2026-03-05T09:24:46.933Z\",\n                \"updatedAt\": \"2026-03-05T09:24:46.933Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    \"error\": []\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get the detail of the Content",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YTAyNGVmMWY1YjM2MjhlNzYwNzM2OSIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzcyMTAzMTAzLCJleHAiOjE3NzI3MDc5MDN9.KjgHJevoYM7O5ekM7ZT7bG7dhrlflc0uXGxtf2_QCtU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/golden-temple/69a94bdef7b0497a00e228c2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "golden-temple",
+                "69a94bdef7b0497a00e228c2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get the detail of the Content",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/golden-temple/69a94bdef7b0497a00e228c2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "golden-temple",
+                    "69a94bdef7b0497a00e228c2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "597"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"255-dWSb1rLbqf/5It2jcuYqvD9uI+A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Mar 2026 09:42:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"statusCode\": 200,\n    \"message\": \"Golden Temple details fetched successfully\",\n    \"data\": {\n        \"_id\": \"69a94bdef7b0497a00e228c2\",\n        \"appId\": {\n            \"_id\": \"69a0448ac2f6d3e098135b3b\",\n            \"name\": \"Golden Temple\"\n        },\n        \"title\": \"Golden Temple Tour\",\n        \"thumbnail\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/thumbnails/...\",\n        \"video\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/videos/...\",\n        \"bannerImage\": \"https://sikh-kiosk.s3.us-east-1.amazonaws.com/golden-temple/banners/...\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-03-05T09:24:46.933Z\",\n        \"updatedAt\": \"2026-03-05T09:24:46.933Z\",\n        \"__v\": 0\n    },\n    \"error\": []\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "baseUrlLive",
+      "value": ""
+    }
+  ]
+}
