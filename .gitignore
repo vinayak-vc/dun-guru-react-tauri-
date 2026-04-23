@@ -18,3 +18,19 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 coverage
+.aider.tags.cache.v4/cache.db
+.aider.chat.history.md
+.aider.input.history
+bridge_progress/manual_supervisor/
+taskJsons/
+
+# ── Aider / Bridge artefacts ─────────────────────────────────────
+.aider.tags.cache.v4/                    # Aider repo-map tag cache
+bridge_progress/                         # Bridge run state, checkpoints and reports
+logs.meta                                # Unity meta for bridge logs folder
+bridge_progress.meta                     # Unity meta for bridge_progress folder
+bridge_progress/RUN_REPORT.md
+bridge_progress/RUN_DIAGNOSTICS.json
+bridge_progress/LATEST_REPORT.md
+bridge_progress/crg_sync_meta.json
+bridge_progress/last_run.json

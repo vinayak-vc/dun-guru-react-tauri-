@@ -1,0 +1,4 @@
+bridge-runtime/**
+node_modules
+.git
+*.json
