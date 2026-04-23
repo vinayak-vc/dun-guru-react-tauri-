@@ -2,9 +2,11 @@ import React from 'react';
 import ScreenContainer from '@/components/layout/ScreenContainer';
 import useAppStore from '@/store/appStore';
 import { useAppData } from '@/hooks/useAppData';
+import { Button } from '@/models/types';
 
 const HomeScreen: React.FC = () => {
   const setScreen = useAppStore((state) => state.setScreen);
+  const setButton = useAppStore((state) => state.setButton);
   const appData = useAppData();
 
   if (appData.isLoading) {
@@ -23,7 +25,7 @@ const HomeScreen: React.FC = () => {
     );
   }
 
-  const buttons = appData.data?.buttons || [];
+  const buttons: Button[] = appData.data?.buttons || [];
 
   return (
     <ScreenContainer className="flex items-center justify-center">
@@ -32,7 +34,7 @@ const HomeScreen: React.FC = () => {
         <p>Welcome back!</p>
         
         <div className="flex flex-wrap gap-4 justify-center">
-            {buttons.map((button: any) => (
+            {buttons.map((button) => (
                 <button 
                     key={button._id} 
                     type="button" 
