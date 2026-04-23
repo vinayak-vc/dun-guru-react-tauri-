@@ -5,3 +5,11 @@ export function getApiBaseUrl(): string {
     }
     return apiUrl.trim().endsWith('/') ? apiUrl : `${apiUrl}/`;
 }
+
+export function getTargetButtonId(): string {
+    const targetButtonId = import.meta.env.VITE_TARGET_BUTTON_ID;
+    if (!targetButtonId || targetButtonId.trim() === '') {
+        throw new Error('Missing VITE_TARGET_BUTTON_ID');
+    }
+    return targetButtonId.trim();
+}
