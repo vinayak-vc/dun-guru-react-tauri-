@@ -1,23 +1,35 @@
 import React, { useEffect, useState } from 'react';
 
-const FadeTransition: React.FC<{ screenKey: string; children: React.ReactNode; className?: string }> = ({ screenKey, children, className }) => {
-    const [opacity, setOpacity] = useState(0);
+type FadeTransitionProps = {
+  screenKey: string;
+  children: React.ReactNode;
+  className?: string;
+};
 
-    useEffect(() => {
-        setOpacity(0);
-        requestAnimationFrame(() => {
-            setOpacity(1);
-        });
-    }, [screenKey]);
+const FadeTransition: React.FC<FadeTransitionProps> = ({
+  screenKey,
+  children,
+  className,
+}) => {
+  const [opacity, setOpacity] = useState(0);
 
-    return (
-        <div
-            className={`transition-opacity duration-200 ease-out ${className}`}
-            style={{ opacity }}
-        >
-            {children}
-        </div>
-    );
+  useEffect(() => {
+    setOpacity(0);
+    requestAnimationFrame(() => {
+      setOpacity(1);
+    });
+  }, [screenKey]);
+
+  const extraClassName = className ? ` ${className}` : '';
+
+  return (
+    <div
+      className={`transition-opacity duration-200 ease-out${extraClassName}`}
+      style={{ opacity }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default FadeTransition;

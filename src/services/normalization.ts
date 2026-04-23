@@ -1,89 +1,97 @@
-import { AppData, Button } from '@/models/types';
+import { AppData, Button, GalleryItem, Trailer } from '@/models/types';
 
-/**
- * Normalizes a raw button object into the structured Button type.
- * @param rawButton The raw button object.
- * @returns A normalized Button object.
- */
-function normalizeButton(rawButton: unknown): Button {
-    // Type assertion for safety during normalization.
-    const button = rawButton as {
-        _id: unknown;
-        title?: string | null;
-        subtitle?: string | null;
-        description?: string | null;
-        thumbnailUrl?: string | null;
-        trailers?: unknown[] | null;
-        galleryItems?: unknown[] | null;
-    };
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === 'object' && value !== null;
 
-    // Defensive mapping, ensuring all optional fields are null if missing or invalid.
+const readNullableString = (value: unknown): string | null => {
+  if (typeof value === 'string') return value;
+  return null;
+};
+
+const normalizeTrailer = (raw: unknown): Trailer => {
+  if (!isRecord(raw)) return { title: null, url: null, thumbnailUrl: null };
+  return {
+    title: readNullableString(raw.title),
+    url: readNullableString(raw.url),
+    thumbnailUrl: readNullableString(raw.thumbnailUrl),
+  };
+};
+
+const normalizeGalleryItem = (raw: unknown): GalleryItem => {
+  if (!isRecord(raw)) return {};
+  return {
+    _id: readNullableString(raw._id),
+    title: readNullableString(raw.title),
+    shortDescription: readNullableString(raw.shortDescription),
+    longDescription: readNullableString(raw.longDescription),
+    imageUrl: readNullableString(raw.imageUrl),
+    accession: readNullableString(raw.accession),
+    periodOrOrigin: readNullableString(raw.periodOrOrigin),
+    credit: readNullableString(raw.credit),
+    detailUrl: readNullableString(raw.detailUrl),
+  };
+};
+
+const normalizeButton = (rawButton: unknown): Button => {
+  if (!isRecord(rawButton)) {
     return {
-        _id: String(button._id ?? ''),
-        title: button.title ?? null,
-        subtitle: button.subtitle ?? null,
-        description: button.description ?? null,
-        thumbnailUrl: button.thumbnailUrl ?? null,
-        trailers: button.trailers ?? null,
-        galleryItems: button.galleryItems ?? null,
+      _id: '',
+      title: null,
+      subtitle: null,
+      description: null,
+      thumbnailUrl: null,
+      trailers: null,
+      galleryItems: null,
     };
-}
+  }
 
-/**
- * Finds and normalizes the application data based on the target button ID.
- * @param response The raw API response data.
- * @param targetButtonId The ID of the button to locate.
- * @returns AppData containing the normalized buttons.
- */
+  const rawTrailers = rawButton.trailers;
+  const rawGalleryItems = rawButton.galleryItems;
+
+  return {
+    _id: typeof rawButton._id === 'string' ? rawButton._id : String(rawButton._id ?? ''),
+    title: readNullableString(rawButton.title),
+    subtitle: readNullableString(rawButton.subtitle),
+    description: readNullableString(rawButton.description),
+    thumbnailUrl: readNullableString(rawButton.thumbnailUrl),
+    trailers: Array.isArray(rawTrailers) ? rawTrailers.map(normalizeTrailer) : null,
+    galleryItems: Array.isArray(rawGalleryItems)
+      ? rawGalleryItems.map(normalizeGalleryItem)
+      : null,
+  };
+};
+
 export function getAppData(response: unknown, targetButtonId: string): AppData {
-    let items: unknown[] = [];
-    const r = response as any;
+  let items: unknown[] = [];
 
-    // 1. Attempt to locate the array of items defensively based on priority.
-    if (Array.isArray(r?.data?.data)) {
-        items = r.data.data;
-    } else if (Array.isArray(r?.data)) {
-        items = r.data;
-    } else if (Array.isArray(r?.items)) {
-        items = r.items;
-    } else if (Array.isArray(r)) {
-        items = r;
+  if (isRecord(response)) {
+    const data = response.data;
+    if (isRecord(data) && Array.isArray(data.data)) {
+      items = data.data;
+    } else if (Array.isArray(data)) {
+      items = data;
+    } else if (Array.isArray(response.items)) {
+      items = response.items;
     }
+  } else if (Array.isArray(response)) {
+    items = response;
+  }
 
-    // 2. Find the target item.
-    const targetItem = items.find((item: unknown) => {
-        const itemObj = item as { buttons?: unknown[] };
-        const rawButtons = itemObj?.buttons;
+  const targetItem = items.find((item) => {
+    if (!isRecord(item) || !Array.isArray(item.buttons)) return false;
+    const firstButton = item.buttons[0];
+    if (!isRecord(firstButton)) return false;
+    return firstButton._id === targetButtonId;
+  });
 
-        if (!Array.isArray(rawButtons)) {
-            return false;
-        }
-
-        const firstButton = rawButtons[0];
-        if (typeof firstButton !== 'object' || firstButton === null) {
-            return false;
-        }
-
-        // Compare the _id of the first button in the item's buttons array.
-        const buttonId = (firstButton as { _id?: unknown })._id;
-        return buttonId === targetButtonId;
-    });
-
-    // 3. Normalize buttons if the item was found.
-    if (targetItem) {
-        const rawButtons = (targetItem as { buttons: unknown[] }).buttons;
-        if (Array.isArray(rawButtons)) {
-            const normalizedButtons: Button[] = rawButtons
-                // Filter: ONLY keep buttons where _id is truthy
-                .filter((rawButton: unknown) => {
-                    const button = rawButton as { _id: unknown };
-                    return button && button._id;
-                })
-                .map(normalizeButton);
-            return { buttons: normalizedButtons };
-        }
-    }
-
-    // 4. Return empty array if nothing found.
+  if (!isRecord(targetItem) || !Array.isArray(targetItem.buttons)) {
     return { buttons: [] };
+  }
+
+  const normalizedButtons = targetItem.buttons
+    .filter((rawButton) => isRecord(rawButton) && Boolean(rawButton._id))
+    .map(normalizeButton)
+    .filter((button) => Boolean(button._id));
+
+  return { buttons: normalizedButtons };
 }

@@ -4,21 +4,42 @@ import HomeScreen from '@/screens/HomeScreen';
 import VideoScreen from '@/screens/VideoScreen';
 import GalleryScreen from '@/screens/GalleryScreen';
 import DetailScreen from '@/screens/DetailScreen';
+import FadeTransition from '@/components/transition/FadeTransition';
 
 const AppRouter: React.FC = () => {
   const currentScreen = useAppStore((state) => state.currentScreen);
 
   switch (currentScreen) {
     case 'HOME':
-      return <HomeScreen />;
+      return (
+        <FadeTransition screenKey={currentScreen}>
+          <HomeScreen />
+        </FadeTransition>
+      );
     case 'VIDEO':
-      return <VideoScreen />;
+      return (
+        <FadeTransition screenKey={currentScreen}>
+          <VideoScreen />
+        </FadeTransition>
+      );
     case 'GALLERY':
-      return <GalleryScreen />;
+      return (
+        <FadeTransition screenKey={currentScreen}>
+          <GalleryScreen />
+        </FadeTransition>
+      );
     case 'DETAIL':
-      return <DetailScreen />;
+      return (
+        <FadeTransition screenKey={currentScreen}>
+          <DetailScreen />
+        </FadeTransition>
+      );
     default:
-      return <HomeScreen />;
+      return (
+        <FadeTransition screenKey="HOME">
+          <HomeScreen />
+        </FadeTransition>
+      );
   }
 };
 

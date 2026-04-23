@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { getTargetButtonId } from '../../utils/env';
-import { fetchAppDataRaw } from '../../services/api';
-import { getAppData } from '../../services/normalization';
+import { getTargetButtonId } from '@/utils/env';
+import { fetchAppDataRaw } from '@/services/api';
+import { getAppData } from '@/services/normalization';
 
 /**
  * Custom hook to fetch and normalize application data using React Query.

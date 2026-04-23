@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { getApiBaseUrl } from '../../utils/env';
+import { getApiBaseUrl } from '@/utils/env';
 
 // Configure the Axios instance
 const apiClient: AxiosInstance = axios.create({
