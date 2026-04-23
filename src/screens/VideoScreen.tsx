@@ -24,7 +24,7 @@ const VideoScreen: React.FC = () => {
     );
   }
 
-  const button = selectedButton as Button;
+  const button = selectedButton as unknown as Button;
   const videoSrc = button.trailers?.[0]?.url ?? null;
   const galleryItems = button.galleryItems ?? [];
   const thumbnails: ThumbnailStripItem[] = galleryItems.map((item, index) => ({
