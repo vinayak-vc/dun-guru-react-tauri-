@@ -1,4 +1,4 @@
-import { AppData, Button, Trailer, GalleryItem } from '@/models/types';
+import { AppData, Button } from '@/models/types';
 
 /**
  * Normalizes a raw button object into the structured Button type.
@@ -6,9 +6,9 @@ import { AppData, Button, Trailer, GalleryItem } from '@/models/types';
  * @returns A normalized Button object.
  */
 function normalizeButton(rawButton: unknown): Button {
-    // Type assertion for safety during normalization, assuming the structure is generally correct.
+    // Type assertion for safety during normalization.
     const button = rawButton as {
-        _id: string;
+        _id: unknown;
         title?: string | null;
         subtitle?: string | null;
         description?: string | null;
@@ -19,13 +19,13 @@ function normalizeButton(rawButton: unknown): Button {
 
     // Defensive mapping, ensuring all optional fields are null if missing or invalid.
     return {
-        _id: button?._id ?? '',
-        title: button?.title ?? null,
-        subtitle: button?.subtitle ?? null,
-        description: button?.description ?? null,
-        thumbnailUrl: button?.thumbnailUrl ?? null,
-        trailers: button?.trailers ?? null,
-        galleryItems: button?.galleryItems ?? null,
+        _id: String(button._id ?? ''),
+        title: button.title ?? null,
+        subtitle: button.subtitle ?? null,
+        description: button.description ?? null,
+        thumbnailUrl: button.thumbnailUrl ?? null,
+        trailers: button.trailers ?? null,
+        galleryItems: button.galleryItems ?? null,
     };
 }
 
@@ -37,46 +37,49 @@ function normalizeButton(rawButton: unknown): Button {
  */
 export function getAppData(response: unknown, targetButtonId: string): AppData {
     let items: unknown[] = [];
+    const r = response as any;
 
-    // 1. Attempt to locate the array of items defensively.
-    if (typeof response === 'object' && response !== null) {
-        // Check response.data
-        if (response.data && Array.isArray(response.data)) {
-            items = response.data;
-        } 
-        // Check response.data.data
-        else if (response.data && typeof response.data === 'object' && response.data !== null && response.data.data && Array.isArray(response.data.data)) {
-            items = response.data.data;
-        } 
-        // Check response.items
-        else if (response.items && Array.isArray(response.items)) {
-            items = response.items;
-        } 
-        // Check response itself
-        else if (Array.isArray(response)) {
-            items = response;
-        }
+    // 1. Attempt to locate the array of items defensively based on priority.
+    if (Array.isArray(r?.data?.data)) {
+        items = r.data.data;
+    } else if (Array.isArray(r?.data)) {
+        items = r.data;
+    } else if (Array.isArray(r?.items)) {
+        items = r.items;
+    } else if (Array.isArray(r)) {
+        items = r;
     }
 
     // 2. Find the target item.
     const targetItem = items.find((item: unknown) => {
-        const itemObj = item as { buttons?: any[] };
-        if (!itemObj?.buttons || !Array.isArray(itemObj.buttons)) {
+        const itemObj = item as { buttons?: unknown[] };
+        const rawButtons = itemObj?.buttons;
+
+        if (!Array.isArray(rawButtons)) {
             return false;
         }
-        const firstButton = itemObj.buttons[0];
-        if (typeof firstButton !== 'object' || firstButton === null || !('hasOwnProperty' in firstButton) || !('hasOwnProperty' in firstButton['_id'])) {
-             return false;
+
+        const firstButton = rawButtons[0];
+        if (typeof firstButton !== 'object' || firstButton === null) {
+            return false;
         }
+
         // Compare the _id of the first button in the item's buttons array.
-        return (firstButton as any)._id === targetButtonId;
+        const buttonId = (firstButton as any)._id;
+        return typeof buttonId === 'string' && buttonId === targetButtonId;
     });
 
     // 3. Normalize buttons if the item was found.
     if (targetItem) {
         const rawButtons = (targetItem as { buttons: unknown[] }).buttons;
         if (Array.isArray(rawButtons)) {
-            const normalizedButtons: Button[] = rawButtons.map(normalizeButton);
+            const normalizedButtons: Button[] = rawButtons
+                // Filter: ONLY keep buttons where _id is truthy
+                .filter((rawButton: unknown) => {
+                    const button = rawButton as { _id: unknown };
+                    return button && button._id;
+                })
+                .map(normalizeButton);
             return { buttons: normalizedButtons };
         }
     }
