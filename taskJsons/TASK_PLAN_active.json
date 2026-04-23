@@ -1,0 +1,255 @@
+{
+  "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app with Tailwind, React Query, React Router shell, Zustand navigation store, path alias @ -> src, example API base URL.",
+  "tasks": [
+    {
+      "id": 1,
+      "type": "create",
+      "files": ["package.json"],
+      "instruction": "Create package.json for a Vite + React + TypeScript app targeting a Windows kiosk UI. Include dependencies: react, react-dom, react-router-dom, @tanstack/react-query, axios, zustand. Include devDependencies: typescript, vite, @vitejs/plugin-react, tailwindcss, postcss, autoprefixer, @types/react, @types/react-dom. Add scripts: dev (vite), build (tsc -b && vite build), preview (vite preview), typecheck (tsc -p tsconfig.json --noEmit). Set private true. Use compatible semver ranges (caret). Do not add 14B-only tooling.",
+      "context_files": [],
+      "must_exist": ["package.json"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 2,
+      "type": "create",
+      "files": ["vite.config.ts"],
+      "instruction": "Create vite.config.ts exporting default defineConfig({ plugins:[react()], resolve:{ alias:{ '@': fileURLToPath(new URL('./src', import.meta.url)) } }, server:{ port:5173 } }). Import react plugin from @vitejs/plugin-react. Import defineConfig from vite. Import fileURLToPath, URL from node:url.",
+      "context_files": ["package.json"],
+      "must_exist": ["vite.config.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 3,
+      "type": "create",
+      "files": ["tsconfig.json"],
+      "instruction": "Create tsconfig.json for Vite React TS using project references pattern. Include compilerOptions: target ES2022, lib [ES2022, DOM, DOM.Iterable], module ESNext, moduleResolution Bundler, jsx react-jsx, strict true, skipLibCheck true, noEmit true, isolatedModules true, useDefineForClassFields true, allowImportingTsExtensions false, resolveJsonModule true, types [vite/client], baseUrl ., paths { '@/*': ['src/*'] }. Include include: src. Add references: [{ path: './tsconfig.node.json' }].",
+      "context_files": ["package.json"],
+      "must_exist": ["tsconfig.json"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 4,
+      "type": "create",
+      "files": ["tsconfig.node.json"],
+      "instruction": "Create tsconfig.node.json for Vite config typing. Set compilerOptions: composite true, skipLibCheck true, module ESNext, moduleResolution Bundler, strict true. Include only vite.config.ts.",
+      "context_files": ["tsconfig.json"],
+      "must_exist": ["tsconfig.node.json"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 5,
+      "type": "create",
+      "files": ["tailwind.config.ts"],
+      "instruction": "Create tailwind.config.ts exporting default satisfies Config object. content must include ['./index.html','./src/**/*.{ts,tsx}']. Set darkMode to 'class'. Do not enable @tailwindcss/container-queries. Keep theme extend empty unless needed.",
+      "context_files": [],
+      "must_exist": ["tailwind.config.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 6,
+      "type": "create",
+      "files": ["postcss.config.cjs"],
+      "instruction": "Create postcss.config.cjs exporting module.exports = { plugins: { tailwindcss: {}, autoprefixer: {} } }.",
+      "context_files": ["package.json"],
+      "must_exist": ["postcss.config.cjs"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 7,
+      "type": "create",
+      "files": ["index.html"],
+      "instruction": "Create root index.html with <!doctype html>, html lang en, head meta charset utf-8, meta viewport, title DusGuru Kiosk, body containing <div id=root></div>, script type module src=/src/main.tsx.",
+      "context_files": [],
+      "must_exist": ["index.html"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 8,
+      "type": "create",
+      "files": ["src/vite-env.d.ts"],
+      "instruction": "Create src/vite-env.d.ts containing exactly: /// <reference types='vite/client' />.",
+      "context_files": [],
+      "must_exist": ["src/vite-env.d.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 9,
+      "type": "create",
+      "files": ["src/styles/index.css"],
+      "instruction": "Create src/styles/index.css with Tailwind directives @tailwind base; @tailwind components; @tailwind utilities;. Add global rules: html, body, #root { height: 100%; } body { @apply bg-black text-white antialiased; } Add utility .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }.",
+      "context_files": ["tailwind.config.ts"],
+      "must_exist": ["src/styles/index.css"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 10,
+      "type": "create",
+      "files": ["src/models/screen.ts"],
+      "instruction": "Create src/models/screen.ts exporting union type AppScreen = 'HOME' | 'VIDEO' | 'GALLERY' | 'DETAIL'. Export const SCREENS: readonly AppScreen[] = ['HOME','VIDEO','GALLERY','DETAIL'] as const for exhaustiveness helpers.",
+      "context_files": [],
+      "must_exist": ["src/models/screen.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 11,
+      "type": "create",
+      "files": ["src/utils/env.ts"],
+      "instruction": "Create src/utils/env.ts exporting function getApiBaseUrl(): string reading import.meta.env.VITE_API_BASE_URL as string | undefined. If missing, throw Error('Missing VITE_API_BASE_URL'). Trim whitespace. Ensure returned string ends with exactly one trailing slash by appending '/' when absent.",
+      "context_files": [],
+      "must_exist": ["src/utils/env.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 12,
+      "type": "create",
+      "files": ["src/store/appStore.ts"],
+      "instruction": "Create src/store/appStore.ts using zustand create. Import type AppScreen from @/models/screen. State fields: currentScreen AppScreen default 'HOME'; selectedButton unknown | null default null; selectedGalleryItem unknown | null default null; selectedIndex number | null default null. Actions: setScreen(screen), setButton(button), setGalleryItem(item), setSelectedIndex(index:number|null), reset() resets defaults. Export hook useAppStore. Keep no UI state beyond navigation selection.",
+      "context_files": ["src/models/screen.ts"],
+      "must_exist": ["src/store/appStore.ts"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 13,
+      "type": "create",
+      "files": ["src/components/layout/ScreenContainer.tsx"],
+      "instruction": "Create src/components/layout/ScreenContainer.tsx exporting const ScreenContainer: React.FC<React.PropsWithChildren<{ className?: string }>> applying classes: min-h-screen w-full bg-black text-white flex flex-col. Merge optional className using tailwind-friendly string concat. Import React type from react.",
+      "context_files": [],
+      "must_exist": ["src/components/layout/ScreenContainer.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 14,
+      "type": "create",
+      "files": ["src/screens/HomeScreen.tsx"],
+      "instruction": "Create src/screens/HomeScreen.tsx exporting const HomeScreen. Render ScreenContainer with centered column: small label 'HOME', paragraph 'Scaffold loaded'. Provide button type button onClick calling useAppStore.getState().setScreen('VIDEO') labeled 'Go VIDEO (temporary)'. Import ScreenContainer from @/components/layout/ScreenContainer. Import useAppStore from @/store/appStore.",
+      "context_files": ["src/components/layout/ScreenContainer.tsx", "src/store/appStore.ts"],
+      "must_exist": ["src/screens/HomeScreen.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 15,
+      "type": "create",
+      "files": ["src/screens/VideoScreen.tsx"],
+      "instruction": "Create src/screens/VideoScreen.tsx exporting const VideoScreen. Render ScreenContainer with heading 'VIDEO'. Add buttons: BACK calls setScreen('HOME'); NEXT calls setScreen('GALLERY'). Use useAppStore.getState() for actions.",
+      "context_files": ["src/components/layout/ScreenContainer.tsx", "src/store/appStore.ts"],
+      "must_exist": ["src/screens/VideoScreen.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 16,
+      "type": "create",
+      "files": ["src/screens/GalleryScreen.tsx"],
+      "instruction": "Create src/screens/GalleryScreen.tsx exporting const GalleryScreen. Render ScreenContainer with heading 'GALLERY'. Add buttons: BACK to 'VIDEO'; NEXT to 'DETAIL'.",
+      "context_files": ["src/components/layout/ScreenContainer.tsx", "src/store/appStore.ts"],
+      "must_exist": ["src/screens/GalleryScreen.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 17,
+      "type": "create",
+      "files": ["src/screens/DetailScreen.tsx"],
+      "instruction": "Create src/screens/DetailScreen.tsx exporting const DetailScreen. Render ScreenContainer with heading 'DETAIL'. Add button BACK to 'GALLERY'.",
+      "context_files": ["src/components/layout/ScreenContainer.tsx", "src/store/appStore.ts"],
+      "must_exist": ["src/screens/DetailScreen.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 18,
+      "type": "create",
+      "files": ["src/router/AppRouter.tsx"],
+      "instruction": "Create src/router/AppRouter.tsx exporting const AppRouter. Read currentScreen via useAppStore(s=>s.currentScreen). Switch render: HOME HomeScreen; VIDEO VideoScreen; GALLERY GalleryScreen; DETAIL DetailScreen. Import screens using @/ paths. Use explicit exhaustiveness default rendering HomeScreen.",
+      "context_files": ["src/store/appStore.ts", "src/models/screen.ts", "src/screens/HomeScreen.tsx", "src/screens/VideoScreen.tsx", "src/screens/GalleryScreen.tsx", "src/screens/DetailScreen.tsx"],
+      "must_exist": ["src/router/AppRouter.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 19,
+      "type": "create",
+      "files": ["src/app/providers/AppProviders.tsx"],
+      "instruction": "Create src/app/providers/AppProviders.tsx exporting const AppProviders wrapping children with QueryClientProvider using a module-level const queryClient = new QueryClient({ defaultOptions:{ queries:{ staleTime: 60_000, retry: 1 } } }). Wrap with BrowserRouter. Import from @tanstack/react-query, react-router-dom, react.",
+      "context_files": ["package.json"],
+      "must_exist": ["src/app/providers/AppProviders.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 20,
+      "type": "create",
+      "files": ["src/app/App.tsx"],
+      "instruction": "Create src/app/App.tsx exporting default function App returning <AppProviders><AppRouter/></AppProviders>. Import AppProviders from ./providers/AppProviders. Import AppRouter from @/router/AppRouter.",
+      "context_files": ["src/app/providers/AppProviders.tsx", "src/router/AppRouter.tsx"],
+      "must_exist": ["src/app/App.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 21,
+      "type": "create",
+      "files": ["src/main.tsx"],
+      "instruction": "Create src/main.tsx bootstrapping React 18 createRoot on document.getElementById('root')!. Render <StrictMode><App/></StrictMode>. Import React, ReactDOM/client, App from @/app/App, styles from @/styles/index.css.",
+      "context_files": ["src/app/App.tsx"],
+      "must_exist": ["src/main.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 22,
+      "type": "create",
+      "files": [".env.example"],
+      "instruction": "Create .env.example with line VITE_API_BASE_URL=http://api-shm-kiosk.focalat.com/ exactly (include trailing slash). Add comment above explaining kiosk dev usage.",
+      "context_files": [],
+      "must_exist": [".env.example"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 23,
+      "type": "create",
+      "files": [".gitignore"],
+      "instruction": "Create .gitignore ignoring node_modules, dist, .vite, .env, .env.local, .DS_Store, npm-debug.log*, yarn-debug.log*, yarn-error.log*, pnpm-debug.log*, coverage, .idea, .vscode (keep repo clean for kiosk builds).",
+      "context_files": [],
+      "must_exist": [".gitignore"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 24,
+      "type": "create",
+      "files": ["README.md"],
+      "instruction": "Create README.md documenting Milestone 0: install deps with npm install, copy .env.example to .env, run npm run dev. Mention API base uses VITE_API_BASE_URL. Mention stack: Vite React TS Tailwind React Query Router Zustand. Mention next milestone implements API models per Project Docs.",
+      "context_files": [".env.example", "package.json"],
+      "must_exist": ["README.md"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    },
+    {
+      "id": 25,
+      "type": "validate",
+      "files": ["package.json"],
+      "instruction": "Validate Milestone 0 scaffold: from repo root, run npm install then npm run typecheck then npm run build. If scripts missing, add them in package.json only (do not touch TS sources in this task).",
+      "context_files": [],
+      "must_exist": ["package.json", "tsconfig.json", "vite.config.ts", "src/main.tsx"],
+      "must_not_exist": [],
+      "model": "ollama/qwen2.5-coder:7b"
+    }
+  ]
+}
