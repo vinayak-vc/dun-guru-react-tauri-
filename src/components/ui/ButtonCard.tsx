@@ -13,7 +13,7 @@ export type ButtonCardProps = {
   disabled?: boolean;
 };
 
-export const ButtonCard: React.FC<ButtonCardProps> = ({
+const ButtonCardImpl: React.FC<ButtonCardProps> = ({
   title,
   subtitle,
   description,
@@ -72,3 +72,6 @@ export const ButtonCard: React.FC<ButtonCardProps> = ({
     </button>
   );
 };
+
+export const ButtonCard = React.memo(ButtonCardImpl);
+ButtonCard.displayName = 'ButtonCard';

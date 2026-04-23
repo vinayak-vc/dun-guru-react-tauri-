@@ -19,6 +19,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, className, onEnde
   return (
     <video
       src={src}
+      preload="auto"
       autoPlay
       muted
       playsInline

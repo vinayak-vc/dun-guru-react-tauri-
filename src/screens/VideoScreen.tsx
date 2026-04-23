@@ -1,10 +1,10 @@
 import React from 'react';
 import ScreenContainer from '@/components/layout/ScreenContainer';
 import useAppStore from '@/store/appStore';
-import { Button } from "@/models/types";
-import { SectionTitle } from "@/components/ui/SectionTitle";
-import { VideoPlayer } from "@/components/video/VideoPlayer";
-import { ThumbnailStrip, type ThumbnailStripItem } from "@/components/video/ThumbnailStrip";
+import { Button } from '@/models/types';
+import { SectionTitle } from '@/components/ui/SectionTitle';
+import { VideoPlayer } from '@/components/video/VideoPlayer';
+import { ThumbnailStrip, type ThumbnailStripItem } from '@/components/video/ThumbnailStrip';
 
 const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null;
 
@@ -33,14 +33,19 @@ const VideoScreen: React.FC = () => {
     thumbnailUrl: item.imageUrl ?? null,
   }));
   const selectedIndex = useAppStore((s) => s.selectedIndex);
+  const backButtonClassName =
+    'rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60';
 
   return (
-    <ScreenContainer className="flex flex-col items-center justify-center">
-      <div>
-        <SectionTitle title={button.title || "Video"} />
-        <button type="button" onClick={() => setScreen('HOME')}>BACK</button>
+    <ScreenContainer className="flex flex-col gap-6">
+      <div className="flex items-start justify-between gap-6">
+        <SectionTitle title={button.title || 'Video'} />
+        <button type="button" className={backButtonClassName} onClick={() => setScreen('HOME')}>
+          BACK
+        </button>
       </div>
-      <div className="mt-4 w-full">
+
+      <div className="w-full flex-1 min-h-0">
         <VideoPlayer
           src={videoSrc}
           onEnded={() => {
@@ -49,7 +54,8 @@ const VideoScreen: React.FC = () => {
           }}
         />
       </div>
-      <div className="mt-4 w-full">
+
+      <div className="w-full">
         <ThumbnailStrip
           items={thumbnails}
           selectedIndex={selectedIndex}

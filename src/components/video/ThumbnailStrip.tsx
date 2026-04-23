@@ -14,7 +14,7 @@ export type ThumbnailStripProps = {
   className?: string;
 };
 
-export const ThumbnailStrip: React.FC<ThumbnailStripProps> = ({
+const ThumbnailStripImpl: React.FC<ThumbnailStripProps> = ({
   items,
   selectedIndex = null,
   onSelectIndex,
@@ -33,7 +33,12 @@ export const ThumbnailStrip: React.FC<ThumbnailStripProps> = ({
           tabIndex={0}
           onClick={() => onSelectIndex(index)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === 'Enter') {
+              onSelectIndex(index);
+            }
+
+            if (e.key === ' ') {
+              e.preventDefault();
               onSelectIndex(index);
             }
           }}
@@ -52,3 +57,6 @@ export const ThumbnailStrip: React.FC<ThumbnailStripProps> = ({
     </div>
   );
 };
+
+export const ThumbnailStrip = React.memo(ThumbnailStripImpl);
+ThumbnailStrip.displayName = 'ThumbnailStrip';
