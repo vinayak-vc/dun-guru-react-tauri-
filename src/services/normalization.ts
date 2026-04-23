@@ -13,8 +13,8 @@ function normalizeButton(rawButton: unknown): Button {
         subtitle?: string | null;
         description?: string | null;
         thumbnailUrl?: string | null;
-        trailers?: any[] | null;
-        galleryItems?: any[] | null;
+        trailers?: unknown[] | null;
+        galleryItems?: unknown[] | null;
     };
 
     // Defensive mapping, ensuring all optional fields are null if missing or invalid.
@@ -65,8 +65,8 @@ export function getAppData(response: unknown, targetButtonId: string): AppData {
         }
 
         // Compare the _id of the first button in the item's buttons array.
-        const buttonId = (firstButton as any)._id;
-        return typeof buttonId === 'string' && buttonId === targetButtonId;
+        const buttonId = (firstButton as { _id?: unknown })._id;
+        return buttonId === targetButtonId;
     });
 
     // 3. Normalize buttons if the item was found.
