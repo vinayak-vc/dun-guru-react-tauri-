@@ -1,6 +1,6 @@
 {
   "status": "failure",
-  "planned_tasks": 2,
+  "planned_tasks": 5,
   "completed_task_ids": [],
   "completed_tasks": 0,
   "resumed_completed_task_ids": [],
@@ -12,10 +12,10 @@
       "id": 1,
       "type": "modify",
       "files": [
-        "src/router/AppRouter.tsx"
+        "src/components/ui/SectionTitle.tsx"
       ],
       "must_exist": [
-        "src/router/AppRouter.tsx"
+        "src/components/ui/SectionTitle.tsx"
       ],
       "must_not_exist": [],
       "completed": false,
@@ -23,13 +23,54 @@
     },
     {
       "id": 2,
+      "type": "modify",
+      "files": [
+        "src/components/ui/ImageView.tsx"
+      ],
+      "must_exist": [
+        "src/components/ui/ImageView.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    },
+    {
+      "id": 3,
+      "type": "modify",
+      "files": [
+        "src/components/ui/ButtonCard.tsx"
+      ],
+      "must_exist": [
+        "src/components/ui/ButtonCard.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    },
+    {
+      "id": 4,
+      "type": "modify",
+      "files": [
+        "src/components/layout/ScreenContainer.tsx"
+      ],
+      "must_exist": [
+        "src/components/layout/ScreenContainer.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    },
+    {
+      "id": 5,
       "type": "validate",
       "files": [
         "package.json"
       ],
       "must_exist": [
-        "src/components/transition/FadeTransition.tsx",
-        "src/router/AppRouter.tsx"
+        "src/components/ui/Divider.tsx",
+        "src/components/ui/SectionTitle.tsx",
+        "src/components/ui/ImageView.tsx",
+        "src/components/ui/ButtonCard.tsx"
       ],
       "must_not_exist": [],
       "completed": false,

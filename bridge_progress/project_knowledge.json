@@ -86,7 +86,7 @@
     },
     "src/components/layout/ScreenContainer.tsx": {
       "role": "exporting const ScreenContainer: React.FC<React.PropsWithChildren<{ className?: string }>> applying classes: min-h-screen w-full bg-black text-white flex flex-col.",
-      "task_type": "create",
+      "task_type": "modify",
       "last_modified": "2026-04-23",
       "created": "2026-04-23"
     },
@@ -185,6 +185,24 @@
       "task_type": "modify",
       "last_modified": "2026-04-23",
       "created": "2026-04-23"
+    },
+    "src/components/ui/SectionTitle.tsx": {
+      "role": "Implement SectionTitle component.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/components/ui/ImageView.tsx": {
+      "role": "Implement ImageView.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/components/ui/ButtonCard.tsx": {
+      "role": "Implement ButtonCard.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
     }
   },
   "docs": [
@@ -269,7 +287,10 @@
     "api",
     "normalization",
     "useAppData",
-    "FadeTransition"
+    "FadeTransition",
+    "SectionTitle",
+    "ImageView",
+    "ButtonCard"
   ],
   "suggested_next": [],
   "clarifications": [],
@@ -403,6 +424,24 @@
     {
       "date": "2026-04-23",
       "goal": "Milestone 3 (Phase 4): resume (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 4 (Phase 5): Base UI system (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 4 resume",
+      "tasks_completed": 5,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 4 (Phase 5): Base UI system (resume manual review)",
       "tasks_completed": 0,
       "status": "failure"
     }

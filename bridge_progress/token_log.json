@@ -1,6 +1,60 @@
 {
   "sessions": [
     {
+      "session_id": "3d4709e0-9644-4c75-b37e-c64952357144",
+      "timestamp": "2026-04-23T15:58:40",
+      "goal": "Milestone 4 (Phase 5): Base UI system (resume manual review)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 9378,
+        "is_estimate": true,
+        "total_ai_tokens": 9378
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "mechanical_validation_loop"
+      },
+      "savings": {
+        "estimated_direct_tokens": 9378,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 9378,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 9378; with bridge: supervisor 9378 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3657,
+        "direct_cost_sonnet": 0.0731,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 36.2
+    },
+    {
       "session_id": "74438bfe-aa4d-4dfc-80db-2528a437dcb5",
       "timestamp": "2026-04-23T15:09:51",
       "goal": "Milestone 3 (Phase 4): resume (manual review)",
@@ -1161,32 +1215,32 @@
     }
   ],
   "totals": {
-    "sessions_count": 20,
+    "sessions_count": 21,
     "tasks_executed_total": 31,
     "supervisor_tokens_total": 0,
-    "session_tokens_total": 184831,
-    "total_ai_tokens_total": 184831,
+    "session_tokens_total": 194209,
+    "total_ai_tokens_total": 194209,
     "aider_tokens_total": 8557,
     "tokens_saved_total": 155000,
-    "savings_percent_weighted": 45.6,
+    "savings_percent_weighted": 44.4,
     "savings_percent_successful_avg": 58.0,
     "savings_percent_avg": 58.0,
-    "wasted_tokens_total": 99656,
-    "wasted_sessions_count": 11,
+    "wasted_tokens_total": 109034,
+    "wasted_sessions_count": 12,
     "waste_reason_counts": {
-      "mechanical_validation_loop": 3,
+      "mechanical_validation_loop": 4,
       "zero_progress_other": 7,
       "manual_review_rerun": 1
     },
     "cost_total": {
       "bridge_opus": 0.0,
       "bridge_sonnet": 0.0,
-      "direct_opus": 13.2535,
-      "direct_sonnet": 2.6507,
+      "direct_opus": 13.6192,
+      "direct_sonnet": 2.7238,
       "ollama": 0.0,
-      "savings_opus": 13.2535,
-      "savings_sonnet": 2.6507
+      "savings_opus": 13.6192,
+      "savings_sonnet": 2.7238
     },
-    "last_updated": "2026-04-23T15:09:51"
+    "last_updated": "2026-04-23T15:58:40"
   }
 }
