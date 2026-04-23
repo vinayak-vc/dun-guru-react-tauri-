@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppStore } from '@/store/appStore';
+import useAppStore from '@/store/appStore';
 import HomeScreen from '@/screens/HomeScreen';
 import VideoScreen from '@/screens/VideoScreen';
 import GalleryScreen from '@/screens/GalleryScreen';
