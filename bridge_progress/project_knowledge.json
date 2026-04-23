@@ -1,0 +1,392 @@
+{
+  "project": {
+    "name": "DusGuru",
+    "type": "",
+    "language": "",
+    "summary": "# Codex Aider Bridge App is a local orchestrator that separates **planning and review** from **code execution**. It supports both: an external supervisor CLI flow ( , , etc.) a manual supervisor flow where the active agent session reviews each task directly and the bridge waits for decision JSON fil",
+    "repo_root": "H:\\Ai_Project\\DusGuru",
+    "first_seen": "2026-04-23",
+    "last_updated": "2026-04-23",
+    "understanding_confirmed": false,
+    "external_scanner": "code-review-graph",
+    "external_scanner_last_refreshed": "2026-04-23T14:18:36"
+  },
+  "files": {
+    "package.json": {
+      "role": "for a Vite + React + TypeScript app targeting a Windows kiosk UI.",
+      "task_type": "validate",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "vite.config.ts": {
+      "role": "exporting default defineConfig({ plugins:[react()], resolve:{ alias:{ '@': fileURLToPath(new URL('./src', import.meta.url)) } }, server:{ port:5173 } }).",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "tsconfig.json": {
+      "role": "for Vite React TS using project references pattern.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "tsconfig.node.json": {
+      "role": "for Vite config typing.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "tailwind.config.ts": {
+      "role": "exporting default satisfies Config object.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "postcss.config.cjs": {
+      "role": "exporting module.exports = { plugins: { tailwindcss: {}, autoprefixer: {} } }.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "index.html": {
+      "role": "Create root index.html with <!doctype html>, html lang en, head meta charset utf-8, meta viewport, title DusGuru Kiosk, body containing <div id=root></div>, script type module src=/src/main.tsx.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/vite-env.d.ts": {
+      "role": "containing exactly: /// <reference types='vite/client' />.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/styles/index.css": {
+      "role": "with Tailwind directives @tailwind base; @tailwind components; @tailwind utilities;.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/models/screen.ts": {
+      "role": "exporting union type AppScreen = 'HOME' | 'VIDEO' | 'GALLERY' | 'DETAIL'.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/utils/env.ts": {
+      "role": "exporting function getApiBaseUrl(): string reading import.meta.env.VITE_API_BASE_URL as string | undefined.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/store/appStore.ts": {
+      "role": "using zustand create.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/components/layout/ScreenContainer.tsx": {
+      "role": "exporting const ScreenContainer: React.FC<React.PropsWithChildren<{ className?: string }>> applying classes: min-h-screen w-full bg-black text-white flex flex-col.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/screens/HomeScreen.tsx": {
+      "role": "exporting const HomeScreen.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/screens/VideoScreen.tsx": {
+      "role": "exporting const VideoScreen.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/screens/GalleryScreen.tsx": {
+      "role": "exporting const GalleryScreen.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/screens/DetailScreen.tsx": {
+      "role": "exporting const DetailScreen.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/router/AppRouter.tsx": {
+      "role": "exporting const AppRouter.",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/app/providers/AppProviders.tsx": {
+      "role": "exporting const AppProviders wrapping children with QueryClientProvider using a module-level const queryClient = new QueryClient({ defaultOptions:{ queries:{ staleTime: 60_000, retry: 1 } } }).",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/app/App.tsx": {
+      "role": "exporting default function App returning <AppProviders><AppRouter/></AppProviders>.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/main.tsx": {
+      "role": "bootstrapping React 18 createRoot on document.getElementById('root')!.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    ".env.example": {
+      "role": "with line VITE_API_BASE_URL=http://api-shm-kiosk.focalat.com/ exactly (include trailing slash).",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    ".gitignore": {
+      "role": "Create .gitignore ignoring node_modules, dist, .vite, .env, .env.local, .DS_Store, npm-debug.log*, yarn-debug.log*, yarn-error.log*, pnpm-debug.log*, coverage, .idea, .vscode (keep repo clean for...",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "README.md": {
+      "role": "documenting Milestone 0: install deps with npm install, copy .env.example to .env, run npm run dev.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/models/types.ts": {
+      "role": "exporting TypeScript types/interfaces for the API domain: AppData, Button, Trailer, GalleryItem.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/services/api.ts": {
+      "role": "exporting an Axios instance apiClient configured with baseURL from getApiBaseUrl(), timeout 10000.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/services/normalization.ts": {
+      "role": "exporting function getAppData(response: unknown, targetButtonId: string): AppData.",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/hooks/useAppData.ts": {
+      "role": "exporting hook useAppData().",
+      "task_type": "create",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    },
+    "src/components/transition/FadeTransition.tsx": {
+      "role": "Export default function FadeTransition(props:{ screenKey: string; children: React.ReactNode; className?: string }).",
+      "task_type": "modify",
+      "last_modified": "2026-04-23",
+      "created": "2026-04-23"
+    }
+  },
+  "docs": [
+    {
+      "path": "README.md",
+      "title": "DusGuru Kiosk Application",
+      "summary": "# DusGuru Kiosk Application ## Overview This project is a kiosk application built using a modern stack of technologies: **Vite**, **React**, **TypeScript**, **Tailwind CSS**, **React Query**, **React Router**, and **Zustand**. It serves as a scaffold for a multi-screen interactive kiosk experience. ## Getting Started Follow these steps to set up and run the development environment: **Install Dependencies:** **Configure Environment Variables:** Copy the provided example file to create your local environment file: Ensure your API base URL is correctly set in the file using the variable.",
+      "score": 195
+    },
+    {
+      "path": "bringe-runtime/README.md",
+      "title": "Codex Aider Bridge App",
+      "summary": "# Codex Aider Bridge App is a local orchestrator that separates **planning and review** from **code execution**. It supports both: an external supervisor CLI flow ( , , etc.) a manual supervisor flow where the active agent session reviews each task directly and the bridge waits for decision JSON files instead of calling another AI process For the most accurate low-token workflow, use: a pre-written That profile is designed for: Codex supervises, Aider implements, bridge validates. It ships with a **web UI** you can launch by double-clicking , and a CLI you can drive directly from the terminal.",
+      "score": 160
+    },
+    {
+      "path": ".aider.chat.history.md",
+      "title": "aider chat started at 2026-04-23 12:40:24",
+      "summary": "# aider chat started at 2026-04-23 12:40:24 Can't initialize prompt toolkit: No Windows console found. C:\\Python311\\Scripts\\aider.EXE --model ...lama/qwen2.5-coder:7b --yes-always --no-pretty --no-stream --no-auto-lint --no-gitignore --no-show-model-warnings --no-browser --no-detect-urls --no-suggest-shell-commands --timeout 960 --edit-format whole --map-refresh manual --message Reply with OK. RULES CRITICAL: edit ONLY the TARGET FILES listed above \u2014 do NOT create, reference, inspect, or add any other files to the chat CRITICAL: use the exact absolute path shown \u2014 do not change the filename, directory, or extension CRITICAL: stay scoped \u2014 do NOT mention, import, or reason about files outside the target list.",
+      "score": 75
+    },
+    {
+      "path": "bringe-runtime/docs/AGENTIC_AI_ONBOARDING.md",
+      "title": "AGENTIC AI ONBOARDING DOCUMENT",
+      "summary": "# AGENTIC AI ONBOARDING DOCUMENT ## Codex-Aider Bridge \u2014 Project Brief Read this document fully before doing anything. After reading, you will know exactly what this project is, how it works, your role, and what to do next \u2014 all in one prompt. The **Codex-Aider Bridge** is a local Flask web application that separates **AI planning/review** (expensive cloud AI like you) from **code execution** (cheap local Ollama LLM via Aider).",
+      "score": 60
+    },
+    {
+      "path": "bringe-runtime/docs/AGENT_CONTEXT.md",
+      "title": "AGENT_CONTEXT",
+      "summary": "# AGENT_CONTEXT ## Architecture Summary The bridge is a local CLI orchestrator with a strict two-role separation: The loop is strictly sequential and acknowledgement-gated: the supervisor must approve each task before the next one starts. A **web UI** ( ) provides a browser-based front end over the same bridge, enabling setup detection, live task progress, and run history without any terminal interaction. --- ## Module Responsibilities ### Core bridge (CLI) Orchestrates repo scanning, plan acquisition, the sequential task-review loop, logging, git-readiness pre-flight, per-task auto-commit, and CLI argument handling.",
+      "score": 60
+    },
+    {
+      "path": "bringe-runtime/docs/AI_SUPERVISOR_PROMPT.md",
+      "title": "AI Supervisor Reference",
+      "summary": "# AI Supervisor Reference This document explains how an agentic AI should behave when supervising Aider through this bridge. The recommended operating mode is no longer \u201cspawn another AI CLI and hope it plans well\u201d. The recommended mode is: the active AI session creates the task plan the bridge runs Aider the bridge validates and records results the active AI session reviews each task the bridge resumes from the AI\u2019s decision the bridge keeps a structured project memory under --- ## The Supervisor Role The supervisor is the **technical lead**.",
+      "score": 60
+    },
+    {
+      "path": "bringe-runtime/docs/CASE_STUDY.md",
+      "title": "Case Study: Codex-Aider Bridge \u2014 Separating AI Thinking from AI Coding",
+      "summary": "# Case Study: Codex-Aider Bridge \u2014 Separating AI Thinking from AI Coding **Date:** April 2026 **Duration:** 2 months of active development **Team:** 1 human developer + Claude (Agentic AI supervisor) **Codebase:** ~16,000 lines Python + ~14,000 lines JS/CSS/HTML --- ## 1. The Problem Cloud AI models (Claude, GPT-4) are excellent at planning and reasoning but expensive at scale. A single day of active coding with Claude Opus costs $15-50 in API tokens.",
+      "score": 60
+    },
+    {
+      "path": "bringe-runtime/docs/HOW_TO_TALK_TO_SUPERVISOR.md",
+      "title": "HOW TO TALK TO THE SUPERVISOR AI",
+      "summary": "# HOW TO TALK TO THE SUPERVISOR AI This document tells you exactly how to communicate with the Agentic AI (Supervisor) to get maximum bridge and Aider usage \u2014 minimum supervisor tokens, maximum Aider coding. --- ## \u26a0\ufe0f CRITICAL: HOW THE BRIDGE CLI WORKS **External supervisor CLI can be configured via environment variable when needed:** In the recommended workflow you do **not** need this, because manual-supervisor mode keeps review inside the current AI session. Use to pass a full brief/plan file.",
+      "score": 60
+    }
+  ],
+  "patterns": [
+    "Code-review-graph nodes=0, edges=0, files=0",
+    "Code-review-graph flows=0, communities=0"
+  ],
+  "features_done": [
+    "package",
+    "vite.config",
+    "tsconfig",
+    "tsconfig.node",
+    "tailwind.config",
+    "postcss.config",
+    "index",
+    "vite-env.d",
+    "screen",
+    "env",
+    "appStore",
+    "ScreenContainer",
+    "HomeScreen",
+    "VideoScreen",
+    "GalleryScreen",
+    "DetailScreen",
+    "AppRouter",
+    "AppProviders",
+    "App",
+    "main",
+    ".env",
+    ".gitignore",
+    "README",
+    "types",
+    "api",
+    "normalization",
+    "useAppData",
+    "FadeTransition"
+  ],
+  "suggested_next": [],
+  "clarifications": [],
+  "runs": [
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 0: scaffold Vite React TS kiosk app",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 0: scaffold Vite React TS kiosk app",
+      "tasks_completed": 1,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app",
+      "tasks_completed": 1,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app (resume)",
+      "tasks_completed": 25,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "tasks_completed": 1,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "tasks_completed": 8,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 1: Phase 2 data model + API layer (resume task 9 validation)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "tasks_completed": 9,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 1: Phase 2 data model + API layer (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Fix npm install dependency tree",
+      "tasks_completed": 2,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Fix package.json deps",
+      "tasks_completed": 2,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Fix npm deps then typecheck (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "tasks_completed": 3,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3 (Phase 4): state-driven navigation (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3 fix",
+      "tasks_completed": 3,
+      "status": "success"
+    },
+    {
+      "date": "2026-04-23",
+      "goal": "Milestone 3 (Phase 4): fade transition router (manual review)",
+      "tasks_completed": 0,
+      "status": "failure"
+    }
+  ]
+}

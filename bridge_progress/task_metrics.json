@@ -1,0 +1,52 @@
+{
+  "status": "failure",
+  "planned_tasks": 3,
+  "completed_task_ids": [],
+  "completed_tasks": 0,
+  "resumed_completed_task_ids": [],
+  "skipped_tasks": 0,
+  "failed_task_id": 1,
+  "diffs_recorded": 0,
+  "tasks": [
+    {
+      "id": 1,
+      "type": "modify",
+      "files": [
+        "src/components/transition/FadeTransition.tsx"
+      ],
+      "must_exist": [
+        "src/components/transition/FadeTransition.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    },
+    {
+      "id": 2,
+      "type": "modify",
+      "files": [
+        "src/router/AppRouter.tsx"
+      ],
+      "must_exist": [
+        "src/router/AppRouter.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    },
+    {
+      "id": 3,
+      "type": "validate",
+      "files": [
+        "package.json"
+      ],
+      "must_exist": [
+        "src/components/transition/FadeTransition.tsx",
+        "src/router/AppRouter.tsx"
+      ],
+      "must_not_exist": [],
+      "completed": false,
+      "commit_sha": null
+    }
+  ]
+}

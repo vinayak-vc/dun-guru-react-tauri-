@@ -1,0 +1,1132 @@
+{
+  "sessions": [
+    {
+      "session_id": "1caacdb7-62e7-4f5d-a5f7-128351f5ca6a",
+      "timestamp": "2026-04-23T14:41:48",
+      "goal": "Milestone 3 (Phase 4): fade transition router (manual review)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8233,
+        "is_estimate": true,
+        "total_ai_tokens": 8233
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8233,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8233,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8233; with bridge: supervisor 8233 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3211,
+        "direct_cost_sonnet": 0.0642,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 4.7
+    },
+    {
+      "session_id": "2feac2df-80e7-41fd-8dff-ac80cd925b2a",
+      "timestamp": "2026-04-23T14:40:15",
+      "goal": "Milestone 3 fix",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8187,
+        "is_estimate": true,
+        "total_ai_tokens": 8187
+      },
+      "aider": {
+        "tasks_executed": 3,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 23187,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8187,
+        "tokens_saved": 15000,
+        "savings_percent": 64.7,
+        "note": "Without bridge: plan (0 tokens) + 3 tasks x 5000 direct-coding tokens = 23187; with bridge: supervisor 8187 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 15000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.9043,
+        "direct_cost_sonnet": 0.1809,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 29.6
+    },
+    {
+      "session_id": "77f95a2a-a4d8-42d4-bf55-f03215831f9a",
+      "timestamp": "2026-04-23T14:39:43",
+      "goal": "Milestone 3 (Phase 4): state-driven navigation (manual review)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8227,
+        "is_estimate": true,
+        "total_ai_tokens": 8227
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8227,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8227,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8227; with bridge: supervisor 8227 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3209,
+        "direct_cost_sonnet": 0.0642,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 92.1
+    },
+    {
+      "session_id": "8b220698-bb1b-4cb8-b476-b24fe414c13a",
+      "timestamp": "2026-04-23T14:38:01",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8182,
+        "is_estimate": true,
+        "total_ai_tokens": 8182
+      },
+      "aider": {
+        "tasks_executed": 3,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 23182,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8182,
+        "tokens_saved": 15000,
+        "savings_percent": 64.7,
+        "note": "Without bridge: plan (0 tokens) + 3 tasks x 5000 direct-coding tokens = 23182; with bridge: supervisor 8182 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 15000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.9041,
+        "direct_cost_sonnet": 0.1808,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 31.9
+    },
+    {
+      "session_id": "fcdb8c44-3f7a-4ea6-a880-be54cd86ca92",
+      "timestamp": "2026-04-23T14:37:11",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8064,
+        "is_estimate": true,
+        "total_ai_tokens": 8064
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8064,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8064,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8064; with bridge: supervisor 8064 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3145,
+        "direct_cost_sonnet": 0.0629,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 10.5
+    },
+    {
+      "session_id": "2d22ce9a-82eb-42b7-9508-d15f6c3b310b",
+      "timestamp": "2026-04-23T14:36:43",
+      "goal": "Milestone 3: Phase 4 navigation",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8027,
+        "is_estimate": true,
+        "total_ai_tokens": 8027
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8027,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8027,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8027; with bridge: supervisor 8027 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3131,
+        "direct_cost_sonnet": 0.0626,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 10.0
+    },
+    {
+      "session_id": "70bb7bb4-1e07-405e-9966-13ba6de15a5e",
+      "timestamp": "2026-04-23T14:28:02",
+      "goal": "Fix npm deps then typecheck (manual review)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 7569,
+        "is_estimate": true,
+        "total_ai_tokens": 7569
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "mechanical_validation_loop"
+      },
+      "savings": {
+        "estimated_direct_tokens": 7569,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 7569,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 7569; with bridge: supervisor 7569 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.2952,
+        "direct_cost_sonnet": 0.059,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 47.0
+    },
+    {
+      "session_id": "c1da9bbf-6d15-488e-a1f2-7dddff60b554",
+      "timestamp": "2026-04-23T14:25:57",
+      "goal": "Fix package.json deps",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 7513,
+        "is_estimate": true,
+        "total_ai_tokens": 7513
+      },
+      "aider": {
+        "tasks_executed": 2,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 17513,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 7513,
+        "tokens_saved": 10000,
+        "savings_percent": 57.1,
+        "note": "Without bridge: plan (0 tokens) + 2 tasks x 5000 direct-coding tokens = 17513; with bridge: supervisor 7513 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 10000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.683,
+        "direct_cost_sonnet": 0.1366,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 17.5
+    },
+    {
+      "session_id": "2fd9747d-e09e-4e61-8967-4167e4405060",
+      "timestamp": "2026-04-23T14:24:49",
+      "goal": "Fix npm install dependency tree",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 7490,
+        "is_estimate": true,
+        "total_ai_tokens": 7490
+      },
+      "aider": {
+        "tasks_executed": 2,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 17490,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 7490,
+        "tokens_saved": 10000,
+        "savings_percent": 57.2,
+        "note": "Without bridge: plan (0 tokens) + 2 tasks x 5000 direct-coding tokens = 17490; with bridge: supervisor 7490 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 10000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.6821,
+        "direct_cost_sonnet": 0.1364,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 17.4
+    },
+    {
+      "session_id": "0aa8cfef-eccf-44c1-b5b4-df98981d9350",
+      "timestamp": "2026-04-23T14:21:57",
+      "goal": "Milestone 1: Phase 2 data model + API layer (manual review)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 9495,
+        "is_estimate": true,
+        "total_ai_tokens": 9495
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "mechanical_validation_loop"
+      },
+      "savings": {
+        "estimated_direct_tokens": 9495,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 9495,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 9495; with bridge: supervisor 9495 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3703,
+        "direct_cost_sonnet": 0.0741,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 50.8
+    },
+    {
+      "session_id": "27b5a1e9-aa42-413d-b07c-dadc0e5bb6f5",
+      "timestamp": "2026-04-23T14:21:00",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 9451,
+        "is_estimate": true,
+        "total_ai_tokens": 9451
+      },
+      "aider": {
+        "tasks_executed": 9,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 54451,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 9451,
+        "tokens_saved": 45000,
+        "savings_percent": 82.6,
+        "note": "Without bridge: plan (0 tokens) + 9 tasks x 5000 direct-coding tokens = 54451; with bridge: supervisor 9451 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 45000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 2.1236,
+        "direct_cost_sonnet": 0.4247,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 76.7
+    },
+    {
+      "session_id": "e99a8665-9809-4aaf-976d-5ce569ac0588",
+      "timestamp": "2026-04-23T14:18:37",
+      "goal": "Milestone 1: Phase 2 data model + API layer (resume task 9 validation)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 13470,
+        "is_estimate": true,
+        "total_ai_tokens": 13470
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 13470,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 13470,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 13470; with bridge: supervisor 13470 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.5253,
+        "direct_cost_sonnet": 0.1051,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 0.7
+    },
+    {
+      "session_id": "f148628e-d58d-4599-b8ec-32fe0ecb797a",
+      "timestamp": "2026-04-23T14:17:49",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 10400,
+        "is_estimate": true,
+        "total_ai_tokens": 10400
+      },
+      "aider": {
+        "tasks_executed": 7,
+        "tasks_skipped": 1,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 6890,
+        "per_task": [
+          {
+            "task_id": 2,
+            "estimated_tokens": 471,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 3,
+            "estimated_tokens": 279,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 4,
+            "estimated_tokens": 179,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 5,
+            "estimated_tokens": 1026,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 6,
+            "estimated_tokens": 1089,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 6,
+            "estimated_tokens": 996,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 6,
+            "estimated_tokens": 958,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 7,
+            "estimated_tokens": 644,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 8,
+            "estimated_tokens": 653,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 8,
+            "estimated_tokens": 595,
+            "performer": "ollama"
+          }
+        ]
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 45400,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 10400,
+        "tokens_saved": 35000,
+        "savings_percent": 77.1,
+        "note": "Without bridge: plan (0 tokens) + 7 tasks x 5000 direct-coding tokens = 45400; with bridge: supervisor 10400 tokens (cloud) + Aider ~6890 tokens (local/free); cloud AI saved: 35000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 1.7706,
+        "direct_cost_sonnet": 0.3541,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 6890,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 1159.1
+    },
+    {
+      "session_id": "f56f1b72-7590-4f24-b877-a7fc09c93e18",
+      "timestamp": "2026-04-23T13:58:11",
+      "goal": "Milestone 1: Phase 2 data model + API layer",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 9199,
+        "is_estimate": true,
+        "total_ai_tokens": 9199
+      },
+      "aider": {
+        "tasks_executed": 1,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 14199,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 9199,
+        "tokens_saved": 5000,
+        "savings_percent": 35.2,
+        "note": "Without bridge: plan (0 tokens) + 1 tasks x 5000 direct-coding tokens = 14199; with bridge: supervisor 9199 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 5000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.5538,
+        "direct_cost_sonnet": 0.1108,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 17.3
+    },
+    {
+      "session_id": "4e6f1e6d-5c6d-46bc-b984-3d797dad59f0",
+      "timestamp": "2026-04-23T13:53:16",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app (resume)",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 13221,
+        "is_estimate": true,
+        "total_ai_tokens": 13221
+      },
+      "aider": {
+        "tasks_executed": 3,
+        "tasks_skipped": 22,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 984,
+        "per_task": [
+          {
+            "task_id": 23,
+            "estimated_tokens": 198,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 24,
+            "estimated_tokens": 477,
+            "performer": "ollama"
+          },
+          {
+            "task_id": 25,
+            "estimated_tokens": 309,
+            "performer": "ollama"
+          }
+        ]
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 28221,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 13221,
+        "tokens_saved": 15000,
+        "savings_percent": 53.2,
+        "note": "Without bridge: plan (0 tokens) + 3 tasks x 5000 direct-coding tokens = 28221; with bridge: supervisor 13221 tokens (cloud) + Aider ~984 tokens (local/free); cloud AI saved: 15000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 1.1006,
+        "direct_cost_sonnet": 0.2201,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 984,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 701.6
+    },
+    {
+      "session_id": "3aba278a-f17b-4f23-8369-6e49b5073eb4",
+      "timestamp": "2026-04-23T12:52:27",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 11575,
+        "is_estimate": true,
+        "total_ai_tokens": 11575
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 1,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 249,
+        "per_task": [
+          {
+            "task_id": 2,
+            "estimated_tokens": 249,
+            "performer": "ollama"
+          }
+        ]
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "manual_review_rerun"
+      },
+      "savings": {
+        "estimated_direct_tokens": 11575,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 11575,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 11575; with bridge: supervisor 11575 tokens (cloud) + Aider ~249 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.4514,
+        "direct_cost_sonnet": 0.0903,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 249,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 65.3
+    },
+    {
+      "session_id": "42cb8daf-f747-4cf5-b4e8-906eb4d5e1b6",
+      "timestamp": "2026-04-23T12:50:59",
+      "goal": "Milestone 0: scaffold Vite React TS kiosk app",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 11532,
+        "is_estimate": true,
+        "total_ai_tokens": 11532
+      },
+      "aider": {
+        "tasks_executed": 1,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": true,
+        "waste_reason": null
+      },
+      "savings": {
+        "estimated_direct_tokens": 16532,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 11532,
+        "tokens_saved": 5000,
+        "savings_percent": 30.2,
+        "note": "Without bridge: plan (0 tokens) + 1 tasks x 5000 direct-coding tokens = 16532; with bridge: supervisor 11532 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 5000"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.6447,
+        "direct_cost_sonnet": 0.1289,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 17.1
+    },
+    {
+      "session_id": "fff02d63-9aa7-44aa-9864-bdebdabf8b9d",
+      "timestamp": "2026-04-23T12:41:52",
+      "goal": "Milestone 0: scaffold Vite React TypeScript kiosk app",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8415,
+        "is_estimate": true,
+        "total_ai_tokens": 8415
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8415,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8415,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8415; with bridge: supervisor 8415 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3282,
+        "direct_cost_sonnet": 0.0656,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 89.6
+    },
+    {
+      "session_id": "f31de443-9a76-421e-b3e8-f0434f044615",
+      "timestamp": "2026-04-23T12:39:50",
+      "goal": "Milestone 0: scaffold Vite React TS kiosk app",
+      "repo_root": "H:\\Ai_Project\\DusGuru",
+      "supervisor_command": "manual",
+      "supervisor": {
+        "plan_in": 0,
+        "plan_out": 0,
+        "review_in": 0,
+        "review_out": 0,
+        "subplan_in": 0,
+        "subplan_out": 0,
+        "total_in": 0,
+        "total_out": 0,
+        "total": 0
+      },
+      "session": {
+        "tokens": 8484,
+        "is_estimate": true,
+        "total_ai_tokens": 8484
+      },
+      "aider": {
+        "tasks_executed": 0,
+        "tasks_skipped": 0,
+        "reworks": 0,
+        "subplans_generated": 0,
+        "estimated_tokens": 0,
+        "per_task": []
+      },
+      "productivity": {
+        "is_productive": false,
+        "waste_reason": "zero_progress_other"
+      },
+      "savings": {
+        "estimated_direct_tokens": 8484,
+        "actual_supervisor_tokens": 0,
+        "total_ai_tokens": 8484,
+        "tokens_saved": 0,
+        "savings_percent": 0.0,
+        "note": "Without bridge: plan (0 tokens) + 0 tasks x 5000 direct-coding tokens = 8484; with bridge: supervisor 8484 tokens (cloud) + Aider ~0 tokens (local/free); cloud AI saved: 0; session completed no tasks and should be treated as overhead, not productive savings"
+      },
+      "cost": {
+        "bridge_cost_opus": 0.0,
+        "bridge_cost_sonnet": 0.0,
+        "direct_cost_opus": 0.3309,
+        "direct_cost_sonnet": 0.0662,
+        "ollama_cost": 0.0,
+        "ollama_tokens": 0,
+        "savings_dollar_opus": 0.0,
+        "savings_dollar_sonnet": 0.0
+      },
+      "elapsed_seconds": 9.3
+    }
+  ],
+  "totals": {
+    "sessions_count": 19,
+    "tasks_executed_total": 31,
+    "supervisor_tokens_total": 0,
+    "session_tokens_total": 176734,
+    "total_ai_tokens_total": 176734,
+    "aider_tokens_total": 8123,
+    "tokens_saved_total": 155000,
+    "savings_percent_weighted": 46.7,
+    "savings_percent_successful_avg": 58.0,
+    "savings_percent_avg": 58.0,
+    "wasted_tokens_total": 91559,
+    "wasted_sessions_count": 10,
+    "waste_reason_counts": {
+      "zero_progress_other": 7,
+      "mechanical_validation_loop": 2,
+      "manual_review_rerun": 1
+    },
+    "cost_total": {
+      "bridge_opus": 0.0,
+      "bridge_sonnet": 0.0,
+      "direct_opus": 12.9377,
+      "direct_sonnet": 2.5875,
+      "ollama": 0.0,
+      "savings_opus": 12.9377,
+      "savings_sonnet": 2.5875
+    },
+    "last_updated": "2026-04-23T14:41:48"
+  }
+}
