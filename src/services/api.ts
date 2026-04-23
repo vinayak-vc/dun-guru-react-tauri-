@@ -1,10 +1,12 @@
 import axios, { AxiosInstance } from 'axios';
-import { getApiBaseUrl } from '@/utils/env';
+import { getApiBaseUrl, getOptionalApiBearerToken } from '@/utils/env';
 
 // Configure the Axios instance
+const bearerToken = getOptionalApiBearerToken();
 const apiClient: AxiosInstance = axios.create({
     baseURL: getApiBaseUrl(),
     timeout: 10000,
+    headers: bearerToken ? { Authorization: `Bearer ${bearerToken}` } : undefined,
 });
 
 // Add response interceptor
@@ -37,6 +39,8 @@ apiClient.interceptors.response.use(
  * @returns A promise that resolves with the response data.
  */
 export async function fetchAppDataRaw(): Promise<unknown> {
-    const response = await apiClient.get("/");
+    // Postman collection: GET /api/sikh-apps/data
+    // When VITE_API_BASE_URL is set to '/api/' (vite proxy), we call 'sikh-apps/data' here.
+    const response = await apiClient.get('sikh-apps/data');
     return response.data;
 }

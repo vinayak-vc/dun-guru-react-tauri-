@@ -61,37 +61,99 @@ const normalizeButton = (rawButton: unknown): Button => {
   };
 };
 
-export function getAppData(response: unknown, targetButtonId: string): AppData {
-  let items: unknown[] = [];
+const normalizeSikhApiTrailer = (raw: unknown): Trailer => {
+  if (!isRecord(raw)) return { title: null, url: null, thumbnailUrl: null };
+  return {
+    title: readNullableString(raw.description) ?? readNullableString(raw.title),
+    // Postman: trailer.videoUrl
+    url: readNullableString(raw.videoUrl) ?? readNullableString(raw.url),
+    thumbnailUrl: readNullableString(raw.thumbnail) ?? readNullableString(raw.thumbnailUrl),
+  };
+};
 
-  if (isRecord(response)) {
-    const data = response.data;
-    if (isRecord(data) && Array.isArray(data.data)) {
-      items = data.data;
-    } else if (Array.isArray(data)) {
-      items = data;
-    } else if (Array.isArray(response.items)) {
-      items = response.items;
-    }
-  } else if (Array.isArray(response)) {
-    items = response;
+const normalizeSikhApiGalleryItem = (raw: unknown): GalleryItem => {
+  if (!isRecord(raw)) return {};
+  return {
+    _id: readNullableString(raw._id),
+    title: readNullableString(raw.title),
+    shortDescription: readNullableString(raw.shortDescription),
+    longDescription: readNullableString(raw.longDescription),
+    // Postman: gallery.image
+    imageUrl: readNullableString(raw.image) ?? readNullableString(raw.imageUrl),
+    accession: readNullableString(raw.accession),
+    // Postman: gallery.period
+    periodOrOrigin: readNullableString(raw.period) ?? readNullableString(raw.periodOrOrigin),
+    credit: readNullableString(raw.credit),
+    // Postman: gallery.moreDetail
+    detailUrl: readNullableString(raw.moreDetail) ?? readNullableString(raw.detailUrl),
+  };
+};
+
+const normalizeSikhApiButton = (rawButton: unknown): Button => {
+  if (!isRecord(rawButton)) {
+    return { _id: '', title: null, subtitle: null, description: null, thumbnailUrl: null, trailers: null, galleryItems: null };
   }
 
-  const targetItem = items.find((item) => {
-    if (!isRecord(item) || !Array.isArray(item.buttons)) return false;
-    const firstButton = item.buttons[0];
-    if (!isRecord(firstButton)) return false;
-    return firstButton._id === targetButtonId;
-  });
+  const rawGalleries = rawButton.galleries;
+  const rawTrailers = rawButton.trailers;
+  const galleries = Array.isArray(rawGalleries) ? rawGalleries.map(normalizeSikhApiGalleryItem) : null;
+  const trailers = Array.isArray(rawTrailers) ? rawTrailers.map(normalizeSikhApiTrailer) : null;
 
-  if (!isRecord(targetItem) || !Array.isArray(targetItem.buttons)) {
+  const fallbackThumb =
+    galleries?.find((g) => typeof g.imageUrl === 'string' && g.imageUrl.trim().length > 0)?.imageUrl ??
+    trailers?.find((t) => typeof t.thumbnailUrl === 'string' && t.thumbnailUrl.trim().length > 0)?.thumbnailUrl ??
+    null;
+
+  return {
+    _id: typeof rawButton._id === 'string' ? rawButton._id : String(rawButton._id ?? ''),
+    // Postman: button.buttonName
+    title: readNullableString(rawButton.buttonName) ?? readNullableString(rawButton.title),
+    subtitle: null,
+    description: null,
+    thumbnailUrl: fallbackThumb,
+    trailers,
+    galleryItems: galleries,
+  };
+};
+
+const extractItemsArray = (response: unknown): unknown[] => {
+  if (!isRecord(response)) return Array.isArray(response) ? response : [];
+  const data = response.data;
+
+  // Axios response shape: { data: <payload> }
+  if (isRecord(data)) {
+    if (Array.isArray(data.data)) return data.data;
+    if (Array.isArray(data.items)) return data.items;
+  }
+
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(response.items)) return response.items;
+  return [];
+};
+
+export function getAppData(response: unknown, targetButtonId: string | null): AppData {
+  let items: unknown[] = [];
+
+  items = extractItemsArray(response);
+
+  // Sikh kiosk API (Postman): one of the items has { name: 'tenGurus', buttons: [...] }
+  const tenGurusItem = items.find((item) => isRecord(item) && Array.isArray(item.buttons));
+  const rawButtons = isRecord(tenGurusItem) ? tenGurusItem.buttons : null;
+
+  if (!Array.isArray(rawButtons)) {
     return { buttons: [] };
   }
 
-  const normalizedButtons = targetItem.buttons
+  const normalizedButtons = rawButtons
     .filter((rawButton) => isRecord(rawButton) && Boolean(rawButton._id))
-    .map(normalizeButton)
+    .map(normalizeSikhApiButton)
     .filter((button) => Boolean(button._id));
 
-  return { buttons: normalizedButtons };
+  if (!targetButtonId) {
+    return { buttons: normalizedButtons };
+  }
+
+  const filteredButtons = normalizedButtons.filter((b) => b._id === targetButtonId);
+
+  return { buttons: filteredButtons.length > 0 ? filteredButtons : normalizedButtons };
 }
