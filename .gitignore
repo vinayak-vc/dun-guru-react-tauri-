@@ -1,3 +1,6 @@
+# One-off SVG extractions (keep `logo.png`; do not commit huge `*-extracted.png`)
+src/assets/images/*-extracted.png
+
 # Dependencies
 node_modules
 dist
@@ -34,3 +37,16 @@ bridge_progress/RUN_DIAGNOSTICS.json
 bridge_progress/LATEST_REPORT.md
 bridge_progress/crg_sync_meta.json
 bridge_progress/last_run.json
+
+# Tauri build artefacts
+src-tauri/target/
+src-tauri/gen/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Local tooling/runtime folder (not part of app source)
+bringe-runtime/
+
+# Local helper scripts (generated)
+scripts/

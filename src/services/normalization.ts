@@ -1,4 +1,4 @@
-import { AppData, Button, GalleryItem, Trailer } from '@/models/types';
+import { AppData, ExperienceItem, GalleryItem, Trailer } from '@/models/types';
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null;
@@ -8,63 +8,12 @@ const readNullableString = (value: unknown): string | null => {
   return null;
 };
 
-const normalizeTrailer = (raw: unknown): Trailer => {
-  if (!isRecord(raw)) return { title: null, url: null, thumbnailUrl: null };
-  return {
-    title: readNullableString(raw.title),
-    url: readNullableString(raw.url),
-    thumbnailUrl: readNullableString(raw.thumbnailUrl),
-  };
-};
-
-const normalizeGalleryItem = (raw: unknown): GalleryItem => {
-  if (!isRecord(raw)) return {};
-  return {
-    _id: readNullableString(raw._id),
-    title: readNullableString(raw.title),
-    shortDescription: readNullableString(raw.shortDescription),
-    longDescription: readNullableString(raw.longDescription),
-    imageUrl: readNullableString(raw.imageUrl),
-    accession: readNullableString(raw.accession),
-    periodOrOrigin: readNullableString(raw.periodOrOrigin),
-    credit: readNullableString(raw.credit),
-    detailUrl: readNullableString(raw.detailUrl),
-  };
-};
-
-const normalizeButton = (rawButton: unknown): Button => {
-  if (!isRecord(rawButton)) {
-    return {
-      _id: '',
-      title: null,
-      subtitle: null,
-      description: null,
-      thumbnailUrl: null,
-      trailers: null,
-      galleryItems: null,
-    };
-  }
-
-  const rawTrailers = rawButton.trailers;
-  const rawGalleryItems = rawButton.galleryItems;
-
-  return {
-    _id: typeof rawButton._id === 'string' ? rawButton._id : String(rawButton._id ?? ''),
-    title: readNullableString(rawButton.title),
-    subtitle: readNullableString(rawButton.subtitle),
-    description: readNullableString(rawButton.description),
-    thumbnailUrl: readNullableString(rawButton.thumbnailUrl),
-    trailers: Array.isArray(rawTrailers) ? rawTrailers.map(normalizeTrailer) : null,
-    galleryItems: Array.isArray(rawGalleryItems)
-      ? rawGalleryItems.map(normalizeGalleryItem)
-      : null,
-  };
-};
-
 const normalizeSikhApiTrailer = (raw: unknown): Trailer => {
-  if (!isRecord(raw)) return { title: null, url: null, thumbnailUrl: null };
+  if (!isRecord(raw)) return { title: null, description: null, url: null, thumbnailUrl: null };
+  const description = readNullableString(raw.description);
   return {
-    title: readNullableString(raw.description) ?? readNullableString(raw.title),
+    title: description ?? readNullableString(raw.title),
+    description,
     // Postman: trailer.videoUrl
     url: readNullableString(raw.videoUrl) ?? readNullableString(raw.url),
     thumbnailUrl: readNullableString(raw.thumbnail) ?? readNullableString(raw.thumbnailUrl),
@@ -89,28 +38,43 @@ const normalizeSikhApiGalleryItem = (raw: unknown): GalleryItem => {
   };
 };
 
-const normalizeSikhApiButton = (rawButton: unknown): Button => {
+const normalizeSikhApiButtonToItem = (rawButton: unknown): ExperienceItem | null => {
   if (!isRecord(rawButton)) {
-    return { _id: '', title: null, subtitle: null, description: null, thumbnailUrl: null, trailers: null, galleryItems: null };
+    return null;
   }
 
-  const rawGalleries = rawButton.galleries;
+  const rb = rawButton as Record<string, unknown>;
+  const rawGalleries = Array.isArray(rb.galleries)
+    ? rb.galleries
+    : Array.isArray(rb.gallaries)
+      ? rb.gallaries
+      : [];
   const rawTrailers = rawButton.trailers;
-  const galleries = Array.isArray(rawGalleries) ? rawGalleries.map(normalizeSikhApiGalleryItem) : null;
-  const trailers = Array.isArray(rawTrailers) ? rawTrailers.map(normalizeSikhApiTrailer) : null;
+  const galleries = rawGalleries.map(normalizeSikhApiGalleryItem);
+  const trailers = Array.isArray(rawTrailers) ? rawTrailers.map(normalizeSikhApiTrailer) : [];
 
+  const buttonImageUrl = readNullableString(rawButton.imageUrl);
   const fallbackThumb =
-    galleries?.find((g) => typeof g.imageUrl === 'string' && g.imageUrl.trim().length > 0)?.imageUrl ??
-    trailers?.find((t) => typeof t.thumbnailUrl === 'string' && t.thumbnailUrl.trim().length > 0)?.thumbnailUrl ??
+    buttonImageUrl ??
+    galleries.find((g) => typeof g.imageUrl === 'string' && g.imageUrl.trim().length > 0)?.imageUrl ??
+    trailers.find((t) => typeof t.thumbnailUrl === 'string' && t.thumbnailUrl.trim().length > 0)?.thumbnailUrl ??
+    null;
+
+  const id = typeof rawButton._id === 'string' ? rawButton._id : String(rawButton._id ?? '');
+  if (!id) return null;
+
+  const title = readNullableString(rawButton.buttonName) ?? readNullableString(rawButton.title);
+  const videoUrl =
+    trailers.find((t) => typeof t.url === 'string' && t.url?.trim().length)?.url ??
     null;
 
   return {
-    _id: typeof rawButton._id === 'string' ? rawButton._id : String(rawButton._id ?? ''),
-    // Postman: button.buttonName
-    title: readNullableString(rawButton.buttonName) ?? readNullableString(rawButton.title),
-    subtitle: null,
+    id,
+    title,
     description: null,
+    imageUrl: buttonImageUrl,
     thumbnailUrl: fallbackThumb,
+    videoUrl,
     trailers,
     galleryItems: galleries,
   };
@@ -131,29 +95,129 @@ const extractItemsArray = (response: unknown): unknown[] => {
   return [];
 };
 
-export function getAppData(response: unknown, targetButtonId: string | null): AppData {
-  let items: unknown[] = [];
+const readNullableArray = (value: unknown): unknown[] | null => (Array.isArray(value) ? value : null);
 
-  items = extractItemsArray(response);
+const normalizeGoldenTempleItem = (raw: unknown, index: number): ExperienceItem | null => {
+  if (!isRecord(raw)) return null;
+  const id = readNullableString(raw._id) ?? String(index);
+  const title = readNullableString(raw.title);
+  const thumbnailUrl = readNullableString(raw.thumbnail);
+  const videoUrl = readNullableString(raw.video);
+  return {
+    id,
+    title,
+    description: null,
+    imageUrl: null,
+    thumbnailUrl,
+    videoUrl,
+    trailers: [],
+    galleryItems: [],
+  };
+};
 
-  // Sikh kiosk API (Postman): one of the items has { name: 'tenGurus', buttons: [...] }
-  const tenGurusItem = items.find((item) => isRecord(item) && Array.isArray(item.buttons));
-  const rawButtons = isRecord(tenGurusItem) ? tenGurusItem.buttons : null;
+const normalizeTimelineGalleryItemToGallery = (raw: unknown): GalleryItem => {
+  if (!isRecord(raw)) return {};
+  return {
+    _id: readNullableString(raw._id),
+    title: readNullableString(raw.year) ?? readNullableString(raw.title),
+    shortDescription: readNullableString(raw.shortDescription),
+    longDescription: readNullableString(raw.longDescription),
+    imageUrl: readNullableString(raw.image) ?? readNullableString(raw.thumbnail),
+    accession: null,
+    periodOrOrigin: readNullableString(raw.year),
+    credit: null,
+    detailUrl: null,
+  };
+};
 
-  if (!Array.isArray(rawButtons)) {
-    return { buttons: [] };
+const normalizeTimelineItem = (raw: unknown, index: number): ExperienceItem | null => {
+  if (!isRecord(raw)) return null;
+  const id = readNullableString(raw._id) ?? String(index);
+  const title = readNullableString(raw.year) ?? readNullableString(raw.title);
+  const thumbnailUrl = readNullableString(raw.thumbnail);
+  const imageUrl = readNullableString(raw.image);
+  const galleryItems: GalleryItem[] = [normalizeTimelineGalleryItemToGallery(raw)];
+  return {
+    id,
+    title,
+    description: readNullableString(raw.shortDescription),
+    imageUrl: imageUrl ?? null,
+    thumbnailUrl: thumbnailUrl ?? imageUrl ?? null,
+    videoUrl: null,
+    trailers: [],
+    galleryItems,
+  };
+};
+
+const normalizeAppToItems = (app: unknown): { appId: string | null; name: string | null; description: string | null; items: ExperienceItem[] } | null => {
+  if (!isRecord(app)) return null;
+  const appId = readNullableString(app._id);
+  const name = readNullableString(app.name);
+  const description = readNullableString(app.description);
+
+  const buttons = readNullableArray(app.buttons);
+  if (buttons) {
+    const items = buttons
+      .map(normalizeSikhApiButtonToItem)
+      .filter((v): v is ExperienceItem => Boolean(v));
+    return { appId, name, description, items };
   }
 
-  const normalizedButtons = rawButtons
-    .filter((rawButton) => isRecord(rawButton) && Boolean(rawButton._id))
-    .map(normalizeSikhApiButton)
-    .filter((button) => Boolean(button._id));
-
-  if (!targetButtonId) {
-    return { buttons: normalizedButtons };
+  const goldenTemples = readNullableArray(app.goldenTemples);
+  if (goldenTemples) {
+    const items = goldenTemples
+      .map(normalizeGoldenTempleItem)
+      .filter((v): v is ExperienceItem => Boolean(v));
+    return { appId, name, description, items };
   }
 
-  const filteredButtons = normalizedButtons.filter((b) => b._id === targetButtonId);
+  const timelineGalleries = readNullableArray(app.timelineGalleries);
+  if (timelineGalleries) {
+    const items = timelineGalleries
+      .map(normalizeTimelineItem)
+      .filter((v): v is ExperienceItem => Boolean(v));
+    return { appId, name, description, items };
+  }
 
-  return { buttons: filteredButtons.length > 0 ? filteredButtons : normalizedButtons };
+  return { appId, name, description, items: [] };
+};
+
+/** Select `data[i]` where the first entry in `buttons` has this `_id` (Sikh History kiosk bundle). */
+export const DEFAULT_HOME_FIRST_BUTTON_ID = '69a16102cef5996af9807c67';
+
+const readFirstButtonId = (app: unknown): string | null => {
+  if (!isRecord(app)) return null;
+  const buttons = readNullableArray(app.buttons);
+  if (!buttons?.length) return null;
+  const first = buttons[0];
+  if (!isRecord(first)) return null;
+  if (typeof first._id === 'string') return first._id;
+  return first._id != null ? String(first._id) : null;
+};
+
+export function getAppData(response: unknown, homeFirstButtonIdOverride: string | null): AppData {
+  const apps = extractItemsArray(response);
+  const marker = (homeFirstButtonIdOverride?.trim() || DEFAULT_HOME_FIRST_BUTTON_ID);
+
+  const rawApp =
+    apps.find((item) => {
+      const id = readFirstButtonId(item);
+      return id === marker;
+    }) ?? null;
+
+  if (!rawApp) {
+    return { appId: null, name: null, description: null, items: [] };
+  }
+
+  const picked = normalizeAppToItems(rawApp);
+  if (!picked) {
+    return { appId: null, name: null, description: null, items: [] };
+  }
+
+  return {
+    appId: picked.appId,
+    name: picked.name,
+    description: picked.description,
+    items: picked.items,
+  };
 }

@@ -2,12 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Thin.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-ExtraLight.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Light.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Regular.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Medium.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Bold.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-ExtraBold.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("/src/assets/fonts/Geometria-Heavy.woff2") format("woff2"),
+       url("/src/assets/fonts/Geometria-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body, #root {
   height: 100%;
 }
 
 body {
   @apply bg-black text-white antialiased;
+  font-family: "Geometria", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 .no-scrollbar {
@@ -16,4 +89,62 @@ body {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes kiosk-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes kiosk-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes kiosk-snap-image {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+    filter: blur(1.2px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+.snap-image-enter {
+  animation: kiosk-snap-image 220ms ease-out both;
+}
+
+.kiosk-screen-enter {
+  animation: kiosk-fade-in 160ms linear both;
+}
+
+.kiosk-screen-exit {
+  animation: kiosk-fade-out 160ms linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snap-image-enter,
+  .kiosk-screen-enter,
+  .kiosk-screen-exit,
+  .kiosk-screen-enter h1,
+  .kiosk-screen-enter h2,
+  .kiosk-screen-enter h3,
+  .kiosk-screen-enter p,
+  .kiosk-screen-enter span,
+  .kiosk-screen-enter li {
+    animation: none !important;
+    transition: none !important;
+  }
 }

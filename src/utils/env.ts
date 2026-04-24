@@ -13,17 +13,13 @@ export function getOptionalApiBearerToken(): string | null {
     return trimmed.length > 0 ? trimmed : null;
 }
 
-export function getTargetButtonId(): string {
-    const targetButtonId = import.meta.env.VITE_TARGET_BUTTON_ID;
-    if (!targetButtonId || targetButtonId.trim() === '') {
-        throw new Error('Missing VITE_TARGET_BUTTON_ID');
-    }
-    return targetButtonId.trim();
-}
-
-export function getOptionalTargetButtonId(): string | null {
-    const targetButtonId = import.meta.env.VITE_TARGET_BUTTON_ID;
-    if (typeof targetButtonId !== 'string') return null;
-    const trimmed = targetButtonId.trim();
-    return trimmed.length > 0 && trimmed !== 'YOUR_TARGET_ID' ? trimmed : null;
+/**
+ * When set, `getAppData` selects `data[i]` where `data[i].buttons[0]._id` equals this value.
+ * If unset, normalization uses the default marker id for the Sikh History home bundle.
+ */
+export function getOptionalHomeFirstButtonId(): string | null {
+    const id = import.meta.env.VITE_HOME_FIRST_BUTTON_ID;
+    if (typeof id !== 'string') return null;
+    const trimmed = id.trim();
+    return trimmed.length > 0 ? trimmed : null;
 }

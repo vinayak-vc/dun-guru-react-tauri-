@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getOptionalTargetButtonId } from '@/utils/env';
+import { getOptionalHomeFirstButtonId } from '@/utils/env';
 import { fetchAppDataRaw } from '@/services/api';
 import { getAppData } from '@/services/normalization';
 
@@ -8,13 +8,13 @@ import { getAppData } from '@/services/normalization';
  * @returns The result object from useQuery.
  */
 export function useAppData() {
-    const targetButtonId = getOptionalTargetButtonId();
+    const homeFirstButtonId = getOptionalHomeFirstButtonId();
 
     return useQuery({
-        queryKey: ['appData', targetButtonId ?? 'all'],
+        queryKey: ['appData', 'homeMarker', homeFirstButtonId ?? 'default'],
         queryFn: async () => {
             const raw = await fetchAppDataRaw();
-            return getAppData(raw, targetButtonId);
+            return getAppData(raw, homeFirstButtonId);
         },
         staleTime: 60_000,
         retry: 1,
