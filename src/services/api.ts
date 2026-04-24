@@ -1,38 +1,20 @@
-import axios, { AxiosInstance } from 'axios';
 import { getApiBaseUrl, getOptionalApiBearerToken } from '@/utils/env';
 
-// Configure the Axios instance
-const bearerToken = getOptionalApiBearerToken();
-const apiClient: AxiosInstance = axios.create({
-    baseURL: getApiBaseUrl(),
-    timeout: 10000,
-    headers: bearerToken ? { Authorization: `Bearer ${bearerToken}` } : undefined,
-});
+const isTauriRuntime =
+    typeof window !== 'undefined' &&
+    (Boolean((window as unknown as { __TAURI_INTERNALS__?: unknown }).__TAURI_INTERNALS__) ||
+        Boolean((window as unknown as { __TAURI__?: unknown }).__TAURI__));
 
-// Add response interceptor
-apiClient.interceptors.response.use(
-    (response) => response,
-    (error) => {
-        let message: string;
-        if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            const status = error.response.status;
-            const statusText = error.response.statusText;
-            const data = JSON.stringify(error.response.data);
-            message = `API Error: ${status} (${statusText}). Details: ${data}`;
-        } else if (error.request) {
-            // The request was made but no response was received
-            message = 'Network Error: No response received from the server.';
-        } else {
-            // Something happened in setting up the request that triggered an Error
-            message = `Request Setup Error: ${error.message}`;
-        }
-        
-        // Throw a new Error with a readable message including status code when available.
-        throw new Error(message);
-    }
-);
+const buildUrl = (path: string) => {
+    const base = getApiBaseUrl();
+    const clean = path.startsWith('/') ? path.slice(1) : path;
+    return `${base}${clean}`;
+};
+
+const buildHeaders = () => {
+    const bearerToken = getOptionalApiBearerToken();
+    return bearerToken ? { Authorization: `Bearer ${bearerToken}` } : undefined;
+};
 
 /**
  * Fetches raw application data from the root endpoint.
@@ -41,6 +23,32 @@ apiClient.interceptors.response.use(
 export async function fetchAppDataRaw(): Promise<unknown> {
     // Postman collection: GET /api/sikh-apps/data
     // When VITE_API_BASE_URL is set to '/api/' (vite proxy), we call 'sikh-apps/data' here.
-    const response = await apiClient.get('sikh-apps/data');
-    return response.data;
+    const url = buildUrl('sikh-apps/data');
+
+    if (isTauriRuntime) {
+        // Dynamically import so non-Tauri runtimes can never crash on module init.
+        const { fetch: tauriFetch } = await import('@tauri-apps/plugin-http');
+        const res = await tauriFetch(url, {
+            method: 'GET',
+            headers: buildHeaders(),
+            connectTimeout: 10_000,
+        });
+
+        if (!res.ok) {
+            const text = await res.text().catch(() => '');
+            throw new Error(`API Error: ${res.status}. Details: ${text}`);
+        }
+        return await res.json();
+    }
+
+    const res = await fetch(url, {
+        method: 'GET',
+        headers: buildHeaders(),
+    });
+
+    if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(`API Error: ${res.status}. Details: ${text}`);
+    }
+    return await res.json();
 }

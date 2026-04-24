@@ -1,0 +1,10 @@
+identifier = "main-capability"
+description = "Main window capability (includes HTTP scope)."
+windows = ["main"]
+
+[[permissions]]
+identifier = "http:default"
+
+[[permissions.allow]]
+url = "https://api-shm-kiosk.focalat.com/*"
+

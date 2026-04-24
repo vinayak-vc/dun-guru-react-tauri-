@@ -19,6 +19,7 @@ Follow these steps to set up and run the development environment:
    cp .env.example .env
    ```
    Ensure your API base URL is correctly set in the `.env` file using the `VITE_API_BASE_URL` variable.
+   For the production kiosk API, the endpoint includes an `/api/` prefix, so your base URL should end with `/api/`.
 
 3. **Run the Application:**
    ```bash
@@ -49,6 +50,18 @@ This repo is already configured for **Tauri** (see `src-tauri/`).
 npx tauri build
 ```
 
+### API base URL (important)
+
+The app requests `GET {VITE_API_BASE_URL}/sikh-apps/data`.
+
+If your backend routes are under `/api`, set:
+
+```env
+VITE_API_BASE_URL=https://api-shm-kiosk.focalat.com/api/
+```
+
+If you omit `/api/` you will get `404 Cannot GET /sikh-apps/data`.
+
 ### Output locations (common)
 
 - NSIS installer: `src-tauri/target/release/bundle/nsis/*.exe`
@@ -66,6 +79,10 @@ npx tauri build
 
 - **`can't find library dusguru_kiosk_lib`**
   - This is fixed in this repo by adding `src-tauri/src/lib.rs` and having `src-tauri/src/main.rs` call `dusguru_kiosk_lib::run()`.
+
+- **Tauri `.exe` can’t reach API (CORS / `tauri://localhost`)**
+  - This repo uses the **Tauri HTTP plugin** so requests bypass browser CORS.
+  - Make sure `src-tauri/capabilities/default.toml` allows your API URL (scope allowlist), e.g. `https://api-shm-kiosk.focalat.com/*`.
 
 ## Project Structure and Milestones
 
